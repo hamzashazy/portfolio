@@ -128,9 +128,9 @@ export const siteConfig = {
             {
                 title: "Hamza Shahzad | Portfolio Website",
                 description:
-                    "This is my portfolio website. I built it to showcase my projects and skills. It is a static site built with Next.js, Tailwind CSS,and React.js. I used the following technologies to build it:",
+                    "Built a personal portfolio website using Next.js, React.js, and Tailwind CSS to showcase my projects and skills. The site features interactive project displays with media previews, tech stacks, and direct links to live demos and GitHub repositories. It delivers a modern, responsive, and optimized experience with smooth animations, lazy-loaded images, and clean, component-based code for easy scalability.",
                 logo: "/projects/portfolio/portfolio-logo.webp",
-                thumbnail: "/projects/portfolio/portfolio-thumbnail.webp",
+                thumbnail: "/projects/portfolio/thumbnail.png",
                 repoLink: "https://github.com/hamzashazy/portfolio",
                 technologies: [
                     {
@@ -146,7 +146,7 @@ export const siteConfig = {
                         name: "Next.js",
                     },
                 ],
-                link: "https://hamzashazy.github.io/portfolio",
+                link: "https://portfolio-wine-theta-35.vercel.app/",
                 previewImages: [
                     "/projects/portfolio/1.webp",
                     "/projects/portfolio/2.webp",
@@ -163,9 +163,9 @@ export const siteConfig = {
                 title: "E-commerce Website",
                 description:
                     "Developed a full-stack e-commerce store using the MERN stack (MongoDB, Express.js, React.js, Node.js) with Tailwind CSS for responsive styling and JWT for secure authentication. The platform features distinct dashboards for admins and users, enabling seamless role-based access. Implemented RESTful APIs for managing products, carts, and orders, along with protected routes and Axios-based data handling. The admin panel includes intuitive interfaces for real-time management of products, orders, and users, ensuring efficient store operations and a smooth user experience.",
-                logo: "/projects/genz/genz-logo.webp",
-                thumbnail: "/projects/genz/genz-thumbnail.webp",
-                repoLink: "https://github.com/hamzashazy/react",
+                logo: "/projects/ecommerce/logo.png",
+                thumbnail: "/projects/ecommerce/ecomth.png",
+                repoLink: "https://github.com/hamzashazy/ecommerce-project",
                 technologies: [
                     {
                         icon: <SiNodedotjs className="text-[#FFF]" />,
@@ -184,7 +184,7 @@ export const siteConfig = {
                         name: "Express.js",
                     },
                 ],
-                link: "https://hamzashazy.github.io/react",
+                link: "https://ecommerce-project-leww.vercel.app/",
                 previewImages: [
                     "/projects/genz/1.webp",
                     "/projects/genz/2.webp",
