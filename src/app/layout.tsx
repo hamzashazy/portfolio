@@ -9,6 +9,7 @@ import { Toaster } from "sonner";
 import Plausible from "./components/Plausible";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import NavBar from "./components/NavBar";
 
 // const geistSans = localFont({
 //     src: "./fonts/GeistVF.woff",
@@ -83,6 +84,7 @@ export default function RootLayout({
             <body
                 className={`${inter.className} antialiased bg-background text-slate-100`}
             >
+                <NavBar />
                 <StarsCanvas />
                 <Glow />
                 <Toaster />

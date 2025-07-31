@@ -19,7 +19,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import SectionLabel from "./SectionLabel";
 import { sendMail } from "../utils/sendMail";
 import { toast } from "sonner";
 
@@ -60,7 +59,7 @@ export default function ContactForm() {
         );
         setIsLoading(false);
 
-            if (response && response.success) {
+        if (response && response.success) {
             toast.success(response.message, {
                 description: "Your message has been sent. I will get back to you as soon as possible.",
                 duration: 5000,
@@ -69,7 +68,6 @@ export default function ContactForm() {
                     icon: "text-green-500",
                     toast: "bg-background text-slate-100 border-slate-900",
                     description: "text-slate-350",
-                    
                 }
             });
         } else if (response && !response.success) {
@@ -81,7 +79,6 @@ export default function ContactForm() {
                     icon: "text-red-600",
                     toast: "bg-background text-slate-100 border-slate-900",
                     description: "text-slate-350",
-                    
                 }
             });
         }
@@ -89,33 +86,26 @@ export default function ContactForm() {
     }
 
     return (
-        <MotionTag
-            tag="div"
-            variants={slideInFromRight(1.4)}
-            initial="hidden"
-            animate="visible"
-            className="lg:pl-6 w-full"
-        >
-            <section className="w-full text-sm" id="contact">
-                <SectionLabel label="CONTACT" />
+        <div className="relative flex flex-col items-center justify-center min-h-[400px]">
+            <div className="absolute -inset-1 bg-gradient-to-br from-pink-500/30 via-orange-400/20 to-indigo-400/20 rounded-3xl blur-2xl opacity-60 pointer-events-none" />
+            <div className="relative z-10 w-full max-w-lg mx-auto bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl p-8 md:p-12 border border-pink-400/10">
+                <h2 className="text-2xl font-extrabold text-pink-400 mb-6 text-center">Contact Me</h2>
                 <Form {...form}>
                     <form
                         onSubmit={form.handleSubmit(onSubmit)}
-                        className="grid grid-cols-2 gap-4"
+                        className="flex flex-col gap-6"
                     >
                         <FormField
                             control={form.control}
                             name="name"
                             render={({ field }) => (
-                                <FormItem className="col-span-2 md:col-span-1">
-                                    <FormLabel className="text-slate-100 text-xs">
-                                        Name
-                                    </FormLabel>
+                                <FormItem>
+                                    <FormLabel className="text-slate-100 text-xs">Name</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="Alvin Chang"
+                                            placeholder="Hamza Shahzad"
                                             {...field}
-                                            className="bg-[rgba(255,255,255,0.01)] border-[rgba(255,255,255,0.1)] text-white text-xs p-2 rounded-sm focus:ring-orange-500"
+                                            className="bg-[rgba(255,255,255,0.05)] border-[rgba(255,255,255,0.2)] text-white text-xs p-3 rounded-md focus:ring-2 focus:ring-pink-400 focus:border-pink-400 transition-all duration-200"
                                         />
                                     </FormControl>
                                     <FormMessage className="text-xs" />
@@ -126,15 +116,13 @@ export default function ContactForm() {
                             control={form.control}
                             name="email"
                             render={({ field }) => (
-                                <FormItem className="col-span-2 md:col-span-1">
-                                    <FormLabel className="text-slate-100 text-xs">
-                                        Email
-                                    </FormLabel>
+                                <FormItem>
+                                    <FormLabel className="text-slate-100 text-xs">Email</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="alvin@studioaurora.io"
+                                            placeholder="hamzashazy.work@gmail.com"
                                             {...field}
-                                            className="bg-[rgba(255,255,255,0.01)] border-[rgba(255,255,255,0.1)] text-white text-xs p-2 rounded-sm focus:ring-orange-500"
+                                            className="bg-[rgba(255,255,255,0.05)] border-[rgba(255,255,255,0.2)] text-white text-xs p-3 rounded-md focus:ring-2 focus:ring-pink-400 focus:border-pink-400 transition-all duration-200"
                                         />
                                     </FormControl>
                                     <FormMessage className="text-xs" />
@@ -145,15 +133,13 @@ export default function ContactForm() {
                             control={form.control}
                             name="message"
                             render={({ field }) => (
-                                <FormItem className="col-span-2">
-                                    <FormLabel className="text-slate-100 text-xs">
-                                        Message
-                                    </FormLabel>
+                                <FormItem>
+                                    <FormLabel className="text-slate-100 text-xs">Message</FormLabel>
                                     <FormControl>
                                         <Textarea
                                             placeholder="I would like to request a quote for a website design..."
                                             {...field}
-                                            className="bg-[rgba(255,255,255,0.01)] border-[rgba(255,255,255,0.1)] text-white text-xs p-2 rounded-sm focus:ring-orange-500 w-full"
+                                            className="bg-[rgba(255,255,255,0.05)] border-[rgba(255,255,255,0.2)] text-white text-xs p-3 rounded-md focus:ring-2 focus:ring-pink-400 focus:border-pink-400 transition-all duration-200 w-full"
                                             rows={4}
                                         />
                                     </FormControl>
@@ -161,19 +147,17 @@ export default function ContactForm() {
                                 </FormItem>
                             )}
                         />
-                        <div className="col-span-2 flex justify-start">
-                            <Button
-                                type="submit"
-                                className="bg-gradient-to-r from-orange-600 to-pink-600 hover:from-orange-500 hover:to-pink-500 dark:text-white text-xs px-4 py-2 rounded-sm w-full"
-                                disabled={isLoading}
-                            >
-                                {isLoading ? "SENDING..." : "SEND MESSAGE"}
-                                <Send className="ml-2 h-4 w-4" />
-                            </Button>
-                        </div>
+                        <Button
+                            type="submit"
+                            className="bg-gradient-to-r from-orange-600 to-pink-600 hover:from-orange-500 hover:to-pink-500 dark:text-white text-xs px-4 py-2 rounded-md w-full flex items-center justify-center gap-2 shadow-lg mt-2"
+                            disabled={isLoading}
+                        >
+                            {isLoading ? "SENDING..." : "SEND MESSAGE"}
+                            <Send className="ml-2 h-4 w-4" />
+                        </Button>
                     </form>
                 </Form>
-            </section>
-        </MotionTag>
+            </div>
+        </div>
     );
 }

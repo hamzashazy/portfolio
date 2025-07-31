@@ -12,7 +12,7 @@ import ReadingProgressBar from '@/app/components/ReadingProgressBar';
 // You would likely pull this data from a config or context
 const yourName = "Alvin Chang";
 const yourTitle = "Full Stack Developer";
-const expertiseTags = ["React", "Next.js", "TypeScript", "Node.js"];
+const expertiseTags = ["React", "Node.js", "MERN Stack", "Next.js"];
 const socialLinks = siteConfig.socialLinks;
 const contactButtonText = "Get in touch";
 
