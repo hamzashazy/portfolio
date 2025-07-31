@@ -20,7 +20,7 @@ const AboutMe = () => (
       <li className="bg-green-500/10 px-4 py-2 rounded-full border border-green-400/30">Team Player</li>
     </ul>
     <a
-      href="/hamza-cv.pdf"
+      href="/Hamza-Cv.pdf"
       download
       className="mt-6 inline-flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 text-white font-bold shadow-lg hover:scale-105 transition-transform duration-200"
     >
