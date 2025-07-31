@@ -42,7 +42,7 @@ export const metadata: Metadata = {
                 url: "/Portfolio.png",
                 width: 1920,
                 height: 1080,
-                alt: "Alvin Chang Portfolio",
+                alt: "Hamza Shahzad Portfolio",
             },
         ],
     },

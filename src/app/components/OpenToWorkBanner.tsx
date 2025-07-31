@@ -10,7 +10,7 @@ import { siteConfig } from "@/app/config";
 import ReadingProgressBar from '@/app/components/ReadingProgressBar';
 
 // You would likely pull this data from a config or context
-const yourName = "Alvin Chang";
+const yourName = "Hamza Shahzad";
 const yourTitle = "Full Stack Developer";
 const expertiseTags = ["React", "Node.js", "MERN Stack", "Next.js"];
 const socialLinks = siteConfig.socialLinks;
@@ -87,7 +87,7 @@ const OpenToWorkBanner = () => {
                         <div className="flex items-center justify-between">
                             <div className="flex gap-2">
                                 {siteConfig.socialLinks.map((link, index) => (
-                                    <Link key={index} href={link.url === 'mailto:alvin@studioaurora.io' ? '/#contact' : link.url} target={link.url === 'mailto:alvin@studioaurora.io' ? '_self' : '_blank'} className="text-slate-400 hover:text-violet-500 transition-colors" aria-label="Social link">
+                                    <Link key={index} href={link.url === 'mailto:hamzashahazad2004@gmail.com' ? '/#contact' : link.url} target={link.url === 'mailto:hamzashahazad2004@gmail.com' ? '_self' : '_blank'} className="text-slate-400 hover:text-violet-500 transition-colors" aria-label="Social link">
                                         {link.icon}
                                     </Link>
                                 ))}
