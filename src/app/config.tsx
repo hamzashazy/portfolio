@@ -105,7 +105,11 @@ export const siteConfig = {
              From sleek front-end interfaces to powerful back-end systems, I love crafting web experiences that are intuitive, scalable, and performance-driven — whether it’s an e-commerce platform, an admin dashboard, or a custom solution built from scratch.
              </p>
             <p style="margin-bottom: 1rem;">
+<<<<<<< HEAD
                 When I’m not coding, you’ll likely find me traveling, exploring new places, or discovering local culture and hidden gems.<br>Let’s connect and bring your next <strong>web or API project</strong> to life! 
+=======
+                When I’m not coding, you’ll likely find me traveling, exploring new places, or discovering local culture and hidden gems.<br>Let’s connect and bring your next <strong>web or API project</strong> to life! 🚀
+>>>>>>> fd00a94e9ab12ecd0508d51673c0b021721be371
             </p>
         `,
         experiences: [
@@ -126,6 +130,7 @@ export const siteConfig = {
         ],
         projects: [
             {
+<<<<<<< HEAD
                 title: "Multi-Campus Management System (In Progress)",
                 description:
                     "Developing a full-stack campus management system using the MERN stack (MongoDB, Express.js, React.js, Node.js) with Tailwind CSS for a modern UI and JWT for secure role-based authentication. The platform includes distinct dashboards for Super Admins and Campus Admins, enabling scalable multi-campus operations. Implemented RESTful APIs for managing campuses, admins, students, and programs, with protected routes and Axios-based data handling. The Super Admin panel provides centralized control with cross-campus visibility, while the Admin panel supports campus-specific student and class management. Integrated a notification system for real-time communication, ensuring streamlined administration across all campuses.",
@@ -139,6 +144,17 @@ export const siteConfig = {
                     },
                     {
                         icon: <FaReact className="text-[#ffffff]" />,
+=======
+                title: "Hamza Shahzad | Portfolio Website",
+                description:
+                    "Built a personal portfolio website using Next.js, React.js, and Tailwind CSS to showcase my projects and skills. The site features interactive project displays with media previews, tech stacks, and direct links to live demos and GitHub repositories. It delivers a modern, responsive, and optimized experience with smooth animations, lazy-loaded images, and clean, component-based code for easy scalability.",
+                logo: "/projects/portfolio/portfolio-logo.webp",
+                thumbnail: "/projects/portfolio/thumbnail.png",
+                repoLink: "https://github.com/hamzashazy/portfolio",
+                technologies: [
+                    {
+                        icon: < FaReact  className="text-[#FFF]" />,
+>>>>>>> fd00a94e9ab12ecd0508d51673c0b021721be371
                         name: "React.js",
                     },
                     {
@@ -146,11 +162,19 @@ export const siteConfig = {
                         name: "Tailwind CSS",
                     },
                     {
+<<<<<<< HEAD
                         icon: <SiExpress className="text-[#3178C6]" />,
                         name: "Express.js",
                     },
                 ],
                 link: "https://albn-super.vercel.app",
+=======
+                        icon: <RiNextjsFill className="text-[#FFF]" />,
+                        name: "Next.js",
+                    },
+                ],
+                link: "https://portfolio-wine-theta-35.vercel.app/",
+>>>>>>> fd00a94e9ab12ecd0508d51673c0b021721be371
                 previewImages: [
                     "/projects/portfolio/1.webp",
                     "/projects/portfolio/2.webp",
@@ -167,9 +191,15 @@ export const siteConfig = {
                 title: "E-commerce Website",
                 description:
                     "Developed a full-stack e-commerce store using the MERN stack (MongoDB, Express.js, React.js, Node.js) with Tailwind CSS for responsive styling and JWT for secure authentication. The platform features distinct dashboards for admins and users, enabling seamless role-based access. Implemented RESTful APIs for managing products, carts, and orders, along with protected routes and Axios-based data handling. The admin panel includes intuitive interfaces for real-time management of products, orders, and users, ensuring efficient store operations and a smooth user experience.",
+<<<<<<< HEAD
                 logo: "/projects/genz/genz-logo.webp",
                 thumbnail: "/projects/genz/genz-thumbnail.webp",
                 repoLink: "https://github.com/hamzashazy/react",
+=======
+                logo: "/projects/ecommerce/logo.png",
+                thumbnail: "/projects/ecommerce/ecomth.png",
+                repoLink: "https://github.com/hamzashazy/ecommerce-project",
+>>>>>>> fd00a94e9ab12ecd0508d51673c0b021721be371
                 technologies: [
                     {
                         icon: <SiNodedotjs className="text-[#FFF]" />,
@@ -188,7 +218,11 @@ export const siteConfig = {
                         name: "Express.js",
                     },
                 ],
+<<<<<<< HEAD
                 link: "https://hamzashazy.github.io/react",
+=======
+                link: "https://ecommerce-project-leww.vercel.app/",
+>>>>>>> fd00a94e9ab12ecd0508d51673c0b021721be371
                 previewImages: [
                     "/projects/genz/1.webp",
                     "/projects/genz/2.webp",
@@ -230,7 +264,7 @@ export const siteConfig = {
                 },
                 {
                     name: "WordPress",
-                    icon: <RiWordpressFill className="text-[#21759B]" />,
+                    icon: <RiWordpressFill className="text-[#ffffff]" />,
                     description: "A CMS for websites",
                 },
                 {
@@ -246,12 +280,16 @@ export const siteConfig = {
                 {
                     name: "MongoDB",
                     icon: <SiMongodb className="text-[#47A248]" />,
+<<<<<<< HEAD
                     description: "for NoSQL databases",
                 },
                 {
                     name: "OpenAI",
                     icon: <SiOpenai className="text-[#47A248]" />,
                     description: "for AI integrations",
+=======
+                    description: "database",
+>>>>>>> fd00a94e9ab12ecd0508d51673c0b021721be371
                 },
             ],
             other: [
