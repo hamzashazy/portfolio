@@ -1,7 +1,7 @@
 import { FaGithub, FaFacebook } from "react-icons/fa";
-import { FaLinkedin, FaSquareXTwitter, FaDiscord, FaThreads } from "react-icons/fa6";
+import { FaLinkedin, FaSquareXTwitter, FaDiscord, FaThreads, FaReact } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
-import { SiBluesky } from "react-icons/si";
+import { SiBluesky, SiOpenai } from "react-icons/si";
 import {
     RiNextjsFill,
     RiTailwindCssFill,
@@ -9,79 +9,67 @@ import {
     RiWordpressFill,
 } from "react-icons/ri";
 import {
-    SiTypescript,
-    SiShadcnui,
-    SiPrisma,
+    SiZapier,
+    SiPython,
+    SiN8N,
     SiWoocommerce,
     SiReact,
-    SiSupabase,
     SiExpress,
-    SiPuppeteer,
     SiHtml5,
     SiCss3,
-    SiJavascript,
     SiNodedotjs,
-    SiPhp,
     SiMysql,
     SiMongodb,
-    SiGraphql,
     SiFramer,
-    SiThreedotjs,
-    SiElectron,
-    SiDocker,
-    SiDrizzle,
-    SiMui,
     SiGit,
 } from "react-icons/si";
-import { GrGraphQl } from "react-icons/gr";
 import { TbApi, TbBrandReactNative } from "react-icons/tb";
-import { DiRedis } from "react-icons/di";
 
 
 export const siteConfig = {
-    name: "Alvin Chang",
-    title: "Alvin Chang | Full-Stack Developer",
-    email: "alvin@studioaurora.io",
-    alias: "Aurora",
+    name: "Hamza Shahzad",
+    title: "Hamza Shahzad | Full-Stack Developer",
+    email: "hamzashazy.work@gmail.com",
+    alias: "hamzashazy",
     description:
-        "Alvin Chang is a web developer who builds scalable, user-centric applications using Next.js, WordPress, and other frameworks. With a focus on performance, accessibility, and clean code, Alvin creates digital solutions that are both functional and aesthetically pleasing.",
+        "Hamza Shahzad is a web developer who builds scalable, user-centric applications using Next.js, Node.js, React.js, WordPress, and other frameworks. With a focus on performance, accessibility, and clean code, Alvin creates digital solutions that are both functional and aesthetically pleasing.",
     keywords:
-        "Alvin Chang, full-stack developer, web development, Next.js, WordPress, React, Node.js, scalable applications, clean code",
-    url: "https://alvinchang.dev",
+        "Hamza Shahzad, full-stack developer, web development, Next.js, WordPress, React, Node.js, scalable applications, clean code",
+    url: "https://hamzashazy.github.io/portfolio",
     taglines: [
-        "🚀 Coding Simplicity, Crafting Solutions: Bringing Ideas to Life, One Line at a Time. ✨ Let's transform challenges into digital possibilities with precision and creativity!",
-        "🎨 Where Code Meets Creativity: Building Digital Experiences that Matter. 🌐 From intuitive interfaces to powerful backend systems, I create solutions that engage and inspire.",
-        "💡 Innovating Beyond the Screen: Crafting Seamless Digital Journeys. 🌟 From concept to completion, let's build the future, one pixel and one line of code at a time.",
-    ],
-    titles: ["Full-Stack Developer", "NextJS Developer", "Wordpress Developer"],
+        "Simplicity Meets Brilliance: Turning Code into Clever Solutions, One Idea at a Time. Let’s architect digital magic from scratch—no fluff, just impact.",
+        "Code Like Art, Build Like a Pro: From eye-catching interfaces to robust backend engines, I design experiences that users remember and systems that just work.",
+        "Beyond the Screen, Into the Future: Let's craft digital worlds that flow, function, and feel right—one pixel-perfect, problem-solving line at a time."
+      ],
+    titles: ["Full-Stack Developer", "MERN Stack Developer", "NextJS Developer"],
     socialLinks: [
         {
             icon: <FaGithub />,
-            url: "https://github.com/auroradream04",
+            url: "https://github.com/hamzashazy",
         },
         {
             icon: <FaLinkedin />,
-            url: "https://www.linkedin.com/in/auroradream04/",
+            url: "https://www.linkedin.com/in/hamzashazy/",
         },
         {
             icon: <FaSquareXTwitter />,
-            url: "https://x.com/aurora_dream04",
+            url: "https://x.com/hamzashazy",
         },
         {
             icon: <FaThreads />,
-            url: "https://www.threads.com/@schrodinger0404",
+            url: "https://www.threads.com/@hamzashazy",
         },
         {
             icon: <SiBluesky />,
-            url: "https://bsky.app/profile/alvinchang.dev",
+            url: "https://bsky.app/profile/hamzashazy",
         },
         {
             icon: <FaDiscord />,
-            url: "https://discord.gg/pwYGjDebkF",
+            url: "https://discord.gg",
         },
         {
             icon: <IoIosMail />,
-            url: "mailto:alvin@studioaurora.io",
+            url: "hamzashazy.work@gmail.com",
         },
     ],
     sections: {
@@ -113,55 +101,56 @@ export const siteConfig = {
         ],
         aboutMe: `
             <p style="margin-bottom: 1rem;">
-              Hi! I'm Alvin, a <strong>full-stack developer</strong> specializing in building <strong>responsive websites</strong>, engaging blogs, e-commerce solutions, and interactive streaming platforms. I focus on crafting <strong>clean and efficient code</strong>, from polished front-end designs to robust back-end systems.
-            </p>
+              Hi! I'm Hamza — a <strong>full-stack web developer</strong> with a passion for building <strong>clean</strong>, <strong>responsive</strong>, and <strong>scalable</strong> web applications.
+             From sleek front-end interfaces to powerful back-end systems, I love crafting web experiences that are intuitive, scalable, and performance-driven — whether it’s an e-commerce platform, an admin dashboard, or a custom solution built from scratch.
+             </p>
             <p style="margin-bottom: 1rem;">
-              When I'm not developing web applications, you'll find me experimenting in the kitchen or exploring the latest tech trends. Let's connect to discuss your next <strong>web or API project</strong>!
+                When I’m not coding, you’ll likely find me traveling, exploring new places, or discovering local culture and hidden gems.<br>Let’s connect and bring your next <strong>web or API project</strong> to life! 
             </p>
         `,
         experiences: [
             {
-                company: "Freelance",
-                position: "Full-stack Web Developer",
-                duration: "2024 - Present",
+                company: "ODL.",
+                position: "Full Stack Development intern",
+                duration: "2025-Present",
                 description:
-                    "Built responsive web apps, e-commerce platforms, and custom API solutions primarily using Next.js, Tailwind CSS, and TypeScript. Managed entire development lifecycles from initial client consultation and strategic planning to development, deployment, and ongoing support. Focused heavily on delivering high-performance, SEO-friendly solutions with modern, intuitive user experiences, ensuring client satisfaction through proactive communication and timely project delivery.",
+                    "Contributed to full-stack web development using the MERN stack and Tailwind CSS, focusing on API integration, authentication flows, and dynamic UI components. Applied clean code practices, version control, and component-based architecture in a collaborative team environment.",
             },
             {
-                company: "Altera Karna Business Corp.",
-                position: "Software Engineer",
-                duration: "2023 - 2024",
+                company: "Mark Mates",
+                position: "IT Project Management intern",
+                duration: "",
                 description:
-                    "Developed and maintained various dynamic websites such as streaming services, interactive landing pages, and content-driven news platforms utilizing Next.js, WordPress, and Express.js. Engineered robust APIs and automated internal processes with advanced web scraping tools, significantly enhancing operational efficiency. Additionally, designed and built desktop applications using Electron to streamline internal workflows and support team productivity.",
+                    "Managed client projects using ClickUp, Jira, and Slack, while optimizing workflows through automation with Make.com and Zapier. Coordinated remote teams and ensured timely project delivery with effective tracking and communication.",
             },
         ],
         projects: [
             {
-                title: "Alvin Chang | Portfolio Website",
+                title: "Multi-Campus Management System (In Progress)",
                 description:
-                    "This is my portfolio website. I built it to showcase my projects and skills. It is a static site built with Next.js, Tailwind CSS, and Shadcn/UI. I used the following technologies to build it:",
+                    "Developing a full-stack campus management system using the MERN stack (MongoDB, Express.js, React.js, Node.js) with Tailwind CSS for a modern UI and JWT for secure role-based authentication. The platform includes distinct dashboards for Super Admins and Campus Admins, enabling scalable multi-campus operations. Implemented RESTful APIs for managing campuses, admins, students, and programs, with protected routes and Axios-based data handling. The Super Admin panel provides centralized control with cross-campus visibility, while the Admin panel supports campus-specific student and class management. Integrated a notification system for real-time communication, ensuring streamlined administration across all campuses.",
                 logo: "/projects/portfolio/portfolio-logo.webp",
-                thumbnail: "/projects/portfolio/portfolio-thumbnail.webp",
-                repoLink: "https://github.com/auroradream04/aurora-portfolio",
+                thumbnail: "/projects/portfolio/albn-thumbnail.png",
+                repoLink: "https://github.com/hamzashazy/albn-super",
                 technologies: [
                     {
-                        icon: <RiNextjsFill className="text-[#FFF]" />,
-                        name: "Next.js",
+                        icon: <SiNodedotjs className="text-[#FFF]" />,
+                        name: "Node.js",
+                    },
+                    {
+                        icon: <FaReact className="text-[#ffffff]" />,
+                        name: "React.js",
                     },
                     {
                         icon: <RiTailwindCssFill className="text-[#06B6D4]" />,
                         name: "Tailwind CSS",
                     },
                     {
-                        icon: <SiShadcnui className="text-[#FFF]" />,
-                        name: "Shadcn/UI",
-                    },
-                    {
-                        icon: <SiTypescript className="text-[#3178C6]" />,
-                        name: "TypeScript",
+                        icon: <SiExpress className="text-[#3178C6]" />,
+                        name: "Express.js",
                     },
                 ],
-                link: "https://alvinchang.dev",
+                link: "https://albn-super.vercel.app",
                 previewImages: [
                     "/projects/portfolio/1.webp",
                     "/projects/portfolio/2.webp",
@@ -175,35 +164,31 @@ export const siteConfig = {
                 ]
             },
             {
-                title: "Genzify AI",
+                title: "E-commerce Website",
                 description:
-                    "GenZify is an AI-powered tool I developed to transform everyday text into trendy Gen Z-style language. I managed both the front-end design and back-end development, integrating AI functionality for smooth and creative rephrasings. The platform delivers a fun, engaging experience, perfect for anyone looking to add a modern twist to their communication. This project highlights my skills in blending AI with user-centric design to create a playful, interactive web tool.",
+                    "Developed a full-stack e-commerce store using the MERN stack (MongoDB, Express.js, React.js, Node.js) with Tailwind CSS for responsive styling and JWT for secure authentication. The platform features distinct dashboards for admins and users, enabling seamless role-based access. Implemented RESTful APIs for managing products, carts, and orders, along with protected routes and Axios-based data handling. The admin panel includes intuitive interfaces for real-time management of products, orders, and users, ensuring efficient store operations and a smooth user experience.",
                 logo: "/projects/genz/genz-logo.webp",
                 thumbnail: "/projects/genz/genz-thumbnail.webp",
-                repoLink: "https://github.com/auroradream04/genzify-app",
+                repoLink: "https://github.com/hamzashazy/react",
                 technologies: [
                     {
-                        icon: <RiNextjsFill className="text-[#FFF]" />,
-                        name: "Next.js",
+                        icon: <SiNodedotjs className="text-[#FFF]" />,
+                        name: "Node.js",
                     },
                     {
-                        icon: <RiOpenaiFill className="text-[#412991]" />,
-                        name: "OpenAI API",
+                        icon: <FaReact className="text-[#412991]" />,
+                        name: "React.js",
                     },
                     {
                         icon: <RiTailwindCssFill className="text-[#06B6D4]" />,
                         name: "Tailwind CSS",
                     },
                     {
-                        icon: <SiTypescript className="text-[#3178C6]" />,
-                        name: "TypeScript",
-                    },
-                    {
-                        icon: <SiShadcnui className="text-[#FFF]" />,
-                        name: "Shadcn/UI",
+                        icon: <SiExpress className="text-[#3178C6]" />,
+                        name: "Express.js",
                     },
                 ],
-                link: "https://genzify-app-wine.vercel.app/",
+                link: "https://hamzashazy.github.io/react",
                 previewImages: [
                     "/projects/genz/1.webp",
                     "/projects/genz/2.webp",
@@ -215,147 +200,12 @@ export const siteConfig = {
                     "https://video-proxy-worker.alvs131313.workers.dev/genz-video-4k/output.m3u8"
                 ]
             },
-            {
-                title: "WhatAboutPets",
-                description:
-                    "WhatAboutPets is a comprehensive blog and e-commerce platform I built to provide valuable insights into pet care, health, and wellness. Alongside engaging articles, the site features an integrated WooCommerce store, offering a variety of pet-related products. I managed everything from designing the user-friendly interface to implementing SEO strategies and setting up the online shop. This project highlights my expertise in both content-driven sites and e-commerce solutions, creating a complete experience for pet lovers.",
-                logo: "/projects/whataboutpets/whataboutpets-logo.webp",
-                thumbnail: "/projects/whataboutpets/whataboutpets-thumbnail.webp",
-                repoLink: "",
-                technologies: [
-                    {
-                        icon: <RiNextjsFill className="text-[#FFF]" />,
-                        name: "Next.js",
-                    },
-                    {
-                        icon: <RiWordpressFill className="text-[#21759B]" />,
-                        name: "WordPress",
-                    },
-                    {
-                        icon: <SiTypescript className="text-[#3178C6]" />,
-                        name: "TypeScript",
-                    },
-                    {
-                        icon: <RiTailwindCssFill className="text-[#06B6D4]" />,
-                        name: "Tailwind CSS",
-                    },
-                    {
-                        icon: <SiShadcnui className="text-[#FFF]" />,
-                        name: "Shadcn/UI",
-                    },
-                    {
-                        icon: <GrGraphQl className="text-[#E10098]" />,
-                        name: "GraphQL",
-                    },
-                    {
-                        icon: <SiWoocommerce className="text-[#96588A]" />,
-                        name: "Woocommerce",
-                    },
-                ],
-                link: "https://whataboutpets.com",
-                previewImages: [
-                    "/projects/whataboutpets/1.webp",
-                    "/projects/whataboutpets/2.webp",
-                    "/projects/whataboutpets/3.webp",
-                    "/projects/whataboutpets/4.webp",
-                    "/projects/whataboutpets/5.webp",
-                    "/projects/whataboutpets/6.webp",
-                ],
-                previewVideos: [
-                    "https://video-proxy-worker.alvs131313.workers.dev/whataboutpets-video-4k/output.m3u8"
-                ]
-            },
-            {
-                title: "Plaiful - AI Agent Directory",
-                description:
-                    "Developed for a client, Plaiful is a comprehensive AI agent directory platform built on Next.js. This project involved significant customization of the OpenAlternative codebase to create a dedicated platform for discovering and comparing AI agents focused on the banking and credit union sector. I implemented advanced filtering, search capabilities, and built a modern, intuitive interface for users to easily find AI solutions tailored to their specific needs.",
-                logo: "/projects/plaiful/plaiful-logo.webp",
-                thumbnail: "/projects/plaiful/plaiful-thumbnail.webp",
-                repoLink: "https://github.com/Plaifully/Plai",
-                technologies: [
-                    {
-                        icon: <RiNextjsFill className="text-[#FFF]" />,
-                        name: "Next.js",
-                    },
-                    {
-                        icon: <SiTypescript className="text-[#3178C6]" />,
-                        name: "TypeScript",
-                    },
-                    {
-                        icon: <RiTailwindCssFill className="text-[#06B6D4]" />,
-                        name: "Tailwind CSS",
-                    },
-                    {
-                        icon: <SiPrisma className="text-[#2D3748]" />,
-                        name: "Prisma",
-                    },
-                    {
-                        icon: <SiSupabase className="text-[#0084d4]" />,
-                        name: "Supabase",
-                    },
-                ],
-                link: "https://plai-web.vercel.app/",
-                previewImages: [
-                    "/projects/plaiful/1.webp",
-                    "/projects/plaiful/2.webp",
-                    "/projects/plaiful/3.webp",
-                    "/projects/plaiful/4.webp",
-                    "/projects/plaiful/5.webp", 
-                    "/projects/plaiful/6.webp" 
-                ],
-                previewVideos: [
-                    "https://video-proxy-worker.alvs131313.workers.dev/plaiful-video-4k/output.m3u8"
-                ]
-            },
-            {
-                title: "Zambia Casino",
-                description:
-                    "Built for a client, Zambia Casino is a sleek landing page for an online casino targeting the Zambian market. I designed and developed a responsive, high-performance site that effectively showcases the casino's offerings, promotions, and games. The project emphasizes strong visual elements, fast loading times, and intuitive navigation to optimize user engagement and conversion rates in the competitive online gambling space.",
-                logo: "/projects/zambia/zambia-logo.webp",
-                thumbnail: "/projects/zambia/zambia-thumbnail.webp",
-                repoLink: "",
-                technologies: [
-                    {
-                        icon: <RiNextjsFill className="text-[#FFF]" />,
-                        name: "Next.js",
-                    },
-                    {
-                        icon: <SiTypescript className="text-[#3178C6]" />,
-                        name: "TypeScript",
-                    },
-                    {
-                        icon: <RiTailwindCssFill className="text-[#06B6D4]" />,
-                        name: "Tailwind CSS",
-                    },
-                    {
-                        icon: <SiFramer className="text-[#0055FF]" />,
-                        name: "Framer Motion",
-                    },
-                    {
-                        icon: <SiShadcnui className="text-[#FFF]" />,
-                        name: "Shadcn/UI",
-                    },
-                ],
-                link: "https://zambia-casino.vercel.app/",
-                previewImages: [
-                    "/projects/zambia/1.webp",
-                    "/projects/zambia/2.webp",
-                    "/projects/zambia/3.webp",
-                    "/projects/zambia/4.webp",
-                    "/projects/zambia/5.webp",
-                    "/projects/zambia/6.webp",
-                    "/projects/zambia/7.webp"
-                ],
-                previewVideos: [
-                    "https://video-proxy-worker.alvs131313.workers.dev/zambia-video-4k/output.m3u8"
-                ]
-            },
         ],
         technologies: {
             main: [
                 {
                     name: "Next.js",
-                    icon: <RiNextjsFill className="text-[#FFF]" />,
+                    icon: <FaReact className="text-[#FFF]" />,
                     description: "A React framework",
                 },
                 {
@@ -369,19 +219,14 @@ export const siteConfig = {
                     description: "A CSS framework",
                 },
                 {
-                    name: "TypeScript",
-                    icon: <SiTypescript className="text-[#3178C6]" />,
-                    description: "Typed Javascript",
+                    name: "Node.js",
+                    icon: <SiNodedotjs className="text-[#ffffff]" />,
+                    description: "for REST API's",
                 },
                 {
                     name: "Git",
                     icon: <SiGit className="text-[#F05032]" />,
                     description: "A version control system",
-                },
-                {
-                    name: "Prisma",
-                    icon: <SiPrisma className="text-[#4a5b77]" />,
-                    description: "An ORM for databases",
                 },
                 {
                     name: "WordPress",
@@ -394,9 +239,19 @@ export const siteConfig = {
                     description: "A Node.js framework",
                 },
                 {
-                    name: "Puppeteer",
-                    icon: <SiPuppeteer className="text-[#7a56f1]" />,
-                    description: "A library for browser automation",
+                    name: "N8N",
+                    icon: <SiN8N className="text-[#FFF]" />, // ORIGINALLY BLACK
+                    description: "for automations",
+                },
+                {
+                    name: "MongoDB",
+                    icon: <SiMongodb className="text-[#47A248]" />,
+                    description: "for NoSQL databases",
+                },
+                {
+                    name: "OpenAI",
+                    icon: <SiOpenai className="text-[#47A248]" />,
+                    description: "for AI integrations",
                 },
             ],
             other: [
@@ -409,36 +264,16 @@ export const siteConfig = {
                     icon: <SiCss3 className="text-[#009df7]" />,
                 },
                 {
-                    name: "JavaScript",
-                    icon: <SiJavascript className="text-[#F7DF1E]" />,
+                    name: "Python",
+                    icon: <SiPython className="text-[#009df7]" />,
                 },
                 {
-                    name: "NodeJS",
-                    icon: <SiNodedotjs className="text-[#339933]" />,
-                },
-                {
-                    name: "PHP",
-                    icon: <SiPhp className="text-[#5d6dad]" />,
+                    name: "Zapier",
+                    icon: <SiZapier className="text-[#F7DF1E]" />,
                 },
                 {
                     name: "MySQL",
                     icon: <SiMysql className="text-[#5798ca]" />,
-                },
-                {
-                    name: "Supabase",
-                    icon: <SiSupabase className="text-[#0084d4]" />,
-                },
-                {
-                    name: "MongoDB",
-                    icon: <SiMongodb className="text-[#47A248]" />,
-                },
-                {
-                    name: "Redis",
-                    icon: <DiRedis className="text-[#DC382D]" />,
-                },
-                {
-                    name: "GraphQL",
-                    icon: <SiGraphql className="text-[#E10098]" />,
                 },
                 {
                     name: "RESTful API",
@@ -449,32 +284,12 @@ export const siteConfig = {
                     icon: <SiFramer className="text-[#0055FF]" />,
                 },
                 {
-                    name: "Three.js",
-                    icon: <SiThreedotjs className="text-[#FFF]" />, // ORIGINALLY BLACK
-                },
-                {
                     name: "WooCommerce",
-                    icon: <SiWoocommerce className="text-[#96588A]" />,
+                    icon: <SiWoocommerce className="text-[#ffffff]" />,
                 },
                 {
                     name: "React Native",
                     icon: <TbBrandReactNative className="text-[#61DAFB]" />,
-                },
-                {
-                    name: "Electron",
-                    icon: <SiElectron className="text-[#47848F]" />,
-                },
-                {
-                    name: "Docker",
-                    icon: <SiDocker className="text-[#2496ED]" />,
-                },
-                {
-                    name: "Shadcn/UI",
-                    icon: <SiShadcnui className="text-[#FFF]" />,
-                },
-                {
-                    name: "Drizzle",
-                    icon: <SiDrizzle className="text-[#00A7E1]" />,
                 },
             ],
         },
