@@ -10,7 +10,6 @@ const Technologies = () => (
       {siteConfig.sections.technologies.main.map((tech, idx) => (
         <div
           key={idx}
-<<<<<<< HEAD
           className="relative rounded-xl p-[1px] bg-gradient-to-br from-green-500/20 via-violet-600/10 to-transparent"
         >
           <div className="bg-black/30 rounded-xl p-5 flex flex-col items-center gap-2 border border-white/10 transition-transform duration-300 hover:scale-105">
@@ -29,28 +28,6 @@ const Technologies = () => (
     <div className="mt-8 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 w-full">
       {siteConfig.sections.technologies.other.map((tech, idx) => (
         <div key={idx} className="flex flex-col items-center gap-1 text-xs text-slate-300 hover:text-green-400 transition-colors">
-=======
-          className="relative bg-white/5 backdrop-blur-lg rounded-2xl shadow-xl p-6 flex flex-col items-center gap-2 transition-transform duration-300 hover:scale-110 border border-green-400/10 group"
-        >
-          <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-green-400/30 to-pink-400/20 shadow-lg group-hover:shadow-green-400/40 mb-2 animate-pulse-slow">
-            {tech.icon}
-          </div>
-          <span className="text-sm font-semibold text-green-200 group-hover:text-white transition-colors duration-200">
-            {tech.name}
-          </span>
-          <span className="absolute left-1/2 -bottom-6 -translate-x-1/2 opacity-0 group-hover:opacity-100 pointer-events-none bg-black/80 text-xs text-white px-3 py-1 rounded shadow-lg transition-all duration-200">
-            {tech.description}
-          </span>
-        </div>
-      ))}
-    </div>
-    <div className="mt-8 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 w-full">
-      {siteConfig.sections.technologies.other.map((tech, idx) => (
-        <div
-          key={idx}
-          className="flex flex-col items-center gap-1 text-xs text-slate-300 hover:text-green-400 transition-colors"
-        >
->>>>>>> fd00a94e9ab12ecd0508d51673c0b021721be371
           <div className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 mb-1">
             {tech.icon}
           </div>
