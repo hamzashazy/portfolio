@@ -10,10 +10,7 @@ import Plausible from "./components/Plausible";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import NavBar from "./components/NavBar";
-<<<<<<< HEAD
 import ReadingProgressBar from "./components/ReadingProgressBar";
-=======
->>>>>>> fd00a94e9ab12ecd0508d51673c0b021721be371
 
 // const geistSans = localFont({
 //     src: "./fonts/GeistVF.woff",
@@ -88,13 +85,8 @@ export default function RootLayout({
             <body
                 className={`${inter.className} antialiased bg-background text-slate-100`}
             >
-<<<<<<< HEAD
                 <ReadingProgressBar />
-=======
->>>>>>> fd00a94e9ab12ecd0508d51673c0b021721be371
                 <NavBar />
-                <StarsCanvas />
-                <Glow />
                 <Toaster />
                 <Plausible />
                 <div className="max-w-[2325px] mx-auto">
