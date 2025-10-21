@@ -49,7 +49,7 @@ export const experienceData = [
     {
         company: 'ODL',
         role: 'MERN Stack Development Intern',
-        period: 'June 2025 – Present',
+        period: 'June 2025 – September 2025',
         responsibilities: [
             'Developed and maintained server-side applications using Node.js and Express.js.',
             'Designed and implemented RESTful APIs for client-server communication.',
