@@ -19,17 +19,19 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="relative w-40 h-40 md:w-48 md:h-48 mb-6">
+            <div className="relative w-44 h-44 md:w-52 md:h-52 mb-6 rounded-full overflow-hidden ring-4 ring-primary/50 shadow-lg">
               <Image
-                src="https://picsum.photos/seed/avatar/200/200"
+                src="/prof.jpg"
                 alt={heroData.name}
-                width={200}
-                height={200}
-                className="rounded-full border-4 border-primary/50 object-cover shadow-lg"
+                fill
+                sizes="(min-width: 768px) 208px, 176px"
+                style={{ objectFit: 'cover', objectPosition: '50% 12%' }}
+                priority
                 data-ai-hint="profile picture"
               />
-               <div className="absolute bottom-2 right-2 w-8 h-8 bg-background rounded-full flex items-center justify-center text-2xl animate-wave">
-                👋
+              {/* decorative waving hand positioned slightly outside the ring */}
+              <div className="absolute -bottom-2 -right-2 w-9 h-9 bg-background rounded-full flex items-center justify-center text-2xl animate-wave ring-2 ring-background/60" aria-hidden="true">
+                <span className="leading-none">👋</span>
               </div>
             </div>
             
