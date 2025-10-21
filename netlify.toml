@@ -2,5 +2,10 @@
   command = "next build"
   publish = ".next"
 
+[build.environment]
+  # Allow these env var keys to be used by server code without being flagged in build output.
+  # Actual secret values must be set in the Netlify site settings (do NOT commit them).
+  SECRETS_SCAN_OMIT_KEYS = "EMAIL_USER,EMAIL_PASS,EMAIL_TO"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
