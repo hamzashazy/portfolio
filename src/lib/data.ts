@@ -39,7 +39,7 @@ export const educationData = [
         period: 'Sep 2022 – June 2026 (Expected)',
     },
     {
-        institution: 'IMCG G-10/4',
+        institution: 'IMCB G-10/4',
         degree: 'FSC Pre Engineering',
         period: 'Aug 2020 – May 2022',
     },
