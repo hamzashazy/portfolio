@@ -2,11 +2,11 @@ import { Github, Linkedin, Mail, Phone, FileText } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export const navLinks = [
-    { name: 'Experience', href: 'experience' },
-    { name: 'Projects', href: 'projects' },
-    { name: 'Skills', href: 'skills' },
-    { name: 'Education', href: 'education' },
-    { name: 'Contact', href: 'contact' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Education', href: '#education' },
+    { name: 'Contact', href: '#contact' },
 ];
 
 export const heroData = {
