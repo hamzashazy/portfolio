@@ -1,36 +1,66 @@
-import { educationData } from "@/lib/data";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { GraduationCap } from "lucide-react";
+import { GraduationCap, Award, MapPin } from "lucide-react";
+
+import { educationData, certificationsData } from "@/lib/data";
+import { Reveal, SectionHeading } from "@/components/reveal";
 
 export default function EducationSection() {
   return (
-    <section id="education" className="w-full py-16 md:py-24 lg:py-32">
+    <section id="education" className="py-20 md:py-28">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mb-12 text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Education
-          </h2>
-          <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground md:text-xl">
-            My academic journey and qualifications.
-          </p>
-        </div>
-        <div className="mx-auto grid max-w-4xl gap-8">
-          {educationData.map((edu, index) => (
-            <Card key={index} className="flex flex-col overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg">
-              <CardHeader className="flex flex-row items-start gap-4 space-y-0 p-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                  <GraduationCap className="h-6 w-6 text-primary" />
+        <SectionHeading
+          index="04"
+          label="Education & Certifications"
+          title="Foundations"
+        />
+
+        <div className="grid gap-5 lg:grid-cols-[1.2fr_1fr]">
+          {educationData.map((edu) => (
+            <Reveal key={edu.institution}>
+              <div className="glass relative h-full overflow-hidden rounded-2xl p-7">
+                <div
+                  className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-3xl"
+                  aria-hidden="true"
+                />
+                <div className="flex items-center gap-3">
+                  <span className="rounded-xl border border-primary/20 bg-primary/10 p-2.5 text-primary">
+                    <GraduationCap className="h-5 w-5" />
+                  </span>
+                  <span className="font-mono text-xs text-muted-foreground">{edu.period}</span>
                 </div>
-                <div className="grid gap-1">
-                  <CardTitle className="text-xl font-semibold">{edu.institution}</CardTitle>
-                  <CardDescription>{edu.degree}</CardDescription>
+                <h3 className="mt-5 font-headline text-2xl font-bold">{edu.degree}</h3>
+                <p className="mt-1 text-lg text-muted-foreground">{edu.institution}</p>
+                <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                  <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono text-xs text-primary">
+                    {edu.detail}
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <MapPin className="h-3.5 w-3.5" />
+                    {edu.location}
+                  </span>
                 </div>
-              </CardHeader>
-              <CardContent className="p-6 pt-0">
-                <p className="text-sm text-muted-foreground">{edu.period}</p>
-              </CardContent>
-            </Card>
+              </div>
+            </Reveal>
           ))}
+
+          <Reveal delay={120}>
+            <div className="glass h-full rounded-2xl p-7">
+              <div className="flex items-center gap-3">
+                <span className="rounded-xl border border-accent/30 bg-accent/10 p-2.5 text-accent">
+                  <Award className="h-5 w-5" />
+                </span>
+                <h3 className="font-headline text-lg font-bold">Certifications</h3>
+              </div>
+              <ul className="mt-5 space-y-4">
+                {certificationsData.map((cert) => (
+                  <li key={cert.title} className="border-l-2 border-border pl-4 transition-colors hover:border-accent">
+                    <p className="font-medium leading-snug">{cert.title}</p>
+                    <p className="mt-0.5 text-sm text-muted-foreground">{cert.detail}</p>
+                    <p className="mt-1 font-mono text-xs text-muted-foreground/70">{cert.issuer}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

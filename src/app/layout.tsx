@@ -1,11 +1,25 @@
 import type { Metadata } from 'next';
+import { Inter, Sora, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
 
+const inter = Inter({ subsets: ['latin'], variable: '--font-body' });
+const sora = Sora({ subsets: ['latin'], variable: '--font-headline' });
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
+
 export const metadata: Metadata = {
-  title: "Hamza's Hub | MERN Stack Developer",
-  description: "The professional portfolio of Hamza Shahzad, a passionate MERN Stack Developer specializing in building modern web applications.",
+  title: 'Hamza Shahzad — Full Stack Developer · AI Automation',
+  description:
+    'Portfolio of Hamza Shahzad — Full Stack Developer building scalable web & mobile applications with Next.js, Flutter, Supabase, and Claude-powered AI automations.',
+  keywords: ['Full Stack Developer', 'Next.js', 'Flutter', 'Supabase', 'AI Automation', 'MERN', 'Hamza Shahzad'],
+  openGraph: {
+    title: 'Hamza Shahzad — Full Stack Developer · AI Automation',
+    description:
+      'Building scalable web & mobile products — Next.js CRMs, Flutter apps, and Claude-powered automations.',
+    url: 'https://hamzashazy.vercel.app',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
@@ -15,12 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
-      </head>
-      <body className="font-body antialiased">
+      <body className={`${inter.variable} ${sora.variable} ${jetbrainsMono.variable} font-body antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

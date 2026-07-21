@@ -1,46 +1,79 @@
+import { Briefcase, MapPin } from "lucide-react";
+
 import { experienceData } from "@/lib/data";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Briefcase, CheckCircle2 } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Reveal, SectionHeading } from "@/components/reveal";
+import { cn } from "@/lib/utils";
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="w-full bg-secondary py-16 md:py-24 lg:py-32">
+    <section id="experience" className="py-20 md:py-28">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mb-12 text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Experience
-          </h2>
-          <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground md:text-xl">
-            A timeline of my professional work and contributions.
-          </p>
-        </div>
-        <div className="relative mx-auto max-w-4xl">
-           <div className="absolute left-6 top-0 h-full w-0.5 bg-border" aria-hidden="true" />
-           <div className="space-y-12">
-            {experienceData.map((exp, index) => (
-              <div key={index} className="relative pl-12">
-                <div className="absolute left-0 top-1.5 flex h-10 w-10 items-center justify-center rounded-full bg-background ring-8 ring-background">
-                  <Briefcase className="h-5 w-5 text-primary" />
+        <SectionHeading
+          index="01"
+          label="Experience"
+          title="Where I've been building"
+          description="From project management to full-stack ownership — each role sharpened a different edge."
+        />
+
+        <div className="relative mx-auto max-w-3xl">
+          <div
+            className="absolute bottom-4 left-[19px] top-2 w-px bg-gradient-to-b from-primary via-border to-transparent"
+            aria-hidden="true"
+          />
+
+          <div className="space-y-10">
+            {experienceData.map((job, index) => (
+              <Reveal key={job.company} delay={index * 100} className="relative pl-14">
+                <span
+                  className={cn(
+                    "absolute left-0 top-1.5 flex h-10 w-10 items-center justify-center rounded-full border bg-card",
+                    job.current ? "border-primary/50 glow-primary" : "border-border"
+                  )}
+                >
+                  <Briefcase className={cn("h-4 w-4", job.current ? "text-primary" : "text-muted-foreground")} />
+                </span>
+
+                <div className="glass rounded-2xl p-6 transition-colors hover:border-primary/30">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                    <h3 className="font-headline text-xl font-bold">{job.company}</h3>
+                    {job.current && (
+                      <Badge className="border-primary/30 bg-primary/10 text-primary hover:bg-primary/15">
+                        Current
+                      </Badge>
+                    )}
+                    <span className="ml-auto font-mono text-xs text-muted-foreground">{job.period}</span>
+                  </div>
+
+                  <p className="mt-1 flex flex-wrap items-center gap-x-3 text-sm text-muted-foreground">
+                    <span className="font-medium text-foreground/80">{job.role}</span>
+                    <span className="flex items-center gap-1">
+                      <MapPin className="h-3 w-3" />
+                      {job.location}
+                    </span>
+                  </p>
+
+                  <ul className="mt-4 space-y-2 text-sm leading-relaxed text-muted-foreground">
+                    {job.highlights.map((item) => (
+                      <li key={item} className="flex gap-2.5">
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {job.stack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-md bg-secondary px-2 py-0.5 font-mono text-xs text-muted-foreground"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <Card className="overflow-hidden transition-shadow duration-300 hover:shadow-xl">
-                  <CardHeader>
-                    <CardTitle>{exp.role}</CardTitle>
-                    <CardDescription>
-                      {exp.company} • {exp.period}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      {exp.responsibilities.map((resp, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <CheckCircle2 className="mt-1 h-4 w-4 flex-shrink-0 text-accent" />
-                          <span>{resp}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

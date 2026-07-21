@@ -1,5 +1,4 @@
-import { Github, Linkedin, Mail, Phone, FileText } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Github, Linkedin, Mail, Phone } from 'lucide-react';
 
 export const navLinks = [
     { name: 'Experience', href: '#experience' },
@@ -11,149 +10,259 @@ export const navLinks = [
 
 export const heroData = {
     name: 'Hamza Shahzad',
-    title: 'MERN Stack Developer',
-    introduction: 'A passionate Full Stack Developer who loves turning ideas into fast, reliable web applications. Working with the MERN stack, I focus on building strong backends and smooth, user-friendly experiences. Clean code, scalability, and real-world impact — that’s what drives my work.',
+    title: 'Full Stack Developer',
+    tagline: 'AI Automation & Technical Operations',
+    roles: ['Full Stack Developer', 'Flutter Developer', 'AI Automation Engineer', 'MERN Stack Developer'],
+    introduction:
+        'I build and manage scalable web & mobile products — Next.js CRMs, Flutter apps, and Claude-powered automations. From backend architecture to pixel-level UI, I ship systems that improve how businesses actually operate.',
+    availability: 'Building at Miana · Open to interesting problems',
     contact: {
         email: 'hamzashazy.work@gmail.com',
-        phone: '+92 329 4455669',
+        phone: '+92 315 7575417',
         linkedin: 'https://www.linkedin.com/in/hamzashazy/',
         github: 'https://github.com/hamzashazy',
         portfolio: 'https://hamzashazy.vercel.app/',
-    }
+    },
+    stats: [
+        { value: '10+', label: 'Projects shipped' },
+        { value: '3', label: 'Stacks mastered' },
+        { value: '2026', label: 'CS grad (expected)' },
+        { value: '3.47', label: 'CGPA' },
+    ],
 };
 
 export const socialLinks = [
-    { name: 'LinkedIn', url: heroData.contact.linkedin, icon: Linkedin },
     { name: 'GitHub', url: heroData.contact.github, icon: Github },
+    { name: 'LinkedIn', url: heroData.contact.linkedin, icon: Linkedin },
     { name: 'Email', url: `mailto:${heroData.contact.email}`, icon: Mail },
-];
-
-export const aboutData = {
-    bio: "I am a dedicated and results-oriented MERN Stack Developer with a strong foundation in computer science and real-world experience in full-stack development and project management. My goal is to build high-quality, impactful web applications that solve real-world problems. I thrive in collaborative environments and am always eager to learn new technologies and improve my craft. I'm passionate about backend systems, API design, and creating efficient, maintainable code."
-};
-
-export const educationData = [
-    {
-        institution: 'National Skills University',
-        degree: 'BS Computer Science',
-        period: 'Sep 2022 – June 2026 (Expected)',
-    },
-    {
-        institution: 'IMCB G-10/4',
-        degree: 'FSC Pre Engineering',
-        period: 'Aug 2020 – May 2022',
-    },
 ];
 
 export const experienceData = [
     {
+        company: 'Miana',
+        role: 'Full Stack Web & Mobile Developer',
+        period: 'Jan 2026 – Present',
+        location: 'Remote',
+        current: true,
+        highlights: [
+            'Managing a Next.js-based Real Estate CRM — shipping new features, AI automations, and UX improvements.',
+            'Developed a Flutter restaurant delivery application end-to-end with API integration and responsive UI.',
+            'Building full-stack apps with React, Next.js, Node.js, Express, and MongoDB, owning Git workflows and deployments.',
+        ],
+        stack: ['Next.js', 'Flutter', 'Node.js', 'MongoDB', 'Claude API'],
+    },
+    {
         company: 'ODL',
         role: 'MERN Stack Development Intern',
-        period: 'June 2025 – September 2025',
-        responsibilities: [
-            'Developed and maintained server-side applications using Node.js and Express.js.',
-            'Designed and implemented RESTful APIs for client-server communication.',
-            'Worked with MongoDB for database design and management.',
-            'Collaborated with the frontend team to integrate user-facing elements.'
-        ]
+        period: 'Jun 2025 – Sep 2025',
+        location: 'Islamabad, Pakistan',
+        current: false,
+        highlights: [
+            'Developed full-stack web applications using the MERN stack with clean architecture principles.',
+            'Built backend APIs, authentication systems, and dynamic frontend components.',
+        ],
+        stack: ['MongoDB', 'Express', 'React', 'Node.js'],
     },
     {
         company: 'Mark Mates',
         role: 'Project Management Intern',
         period: 'Jan 2025 – May 2025',
-        responsibilities: [
-            'Assisted in planning and executing project timelines.',
-            'Coordinated with cross-functional teams to ensure project milestones were met.',
-            'Prepared project status reports and documentation.',
-            'Utilized project management tools to track progress and resource allocation.'
-        ]
-    }
+        location: 'Islamabad, Pakistan',
+        current: false,
+        highlights: [
+            'Managed projects using ClickUp, Jira, Slack, and other productivity tooling.',
+            'Improved team workflows through automation tools such as Make.com and Zapier.',
+        ],
+        stack: ['ClickUp', 'Jira', 'Make.com', 'Zapier'],
+    },
 ];
 
-export const projectsData = [
+export type Project = {
+    title: string;
+    subtitle: string;
+    description: string;
+    features: string[];
+    stack: string[];
+    status: 'in-progress' | 'shipped';
+    statusLabel: string;
+    featured: boolean;
+    accent: 'emerald' | 'violet' | 'amber' | 'sky' | 'rose' | 'lime';
+    image?: string;
+    github?: string;
+    live?: string;
+};
+
+export const projectsData: Project[] = [
     {
-        title: 'Campus Management System – Super Admin & Campus Admin Panel',
-        description: 'A unified admin panel where Super Admins manage multiple campuses, administrators, and global settings, while Campus Admins handle students, faculty, courses, and daily campus operations.',
+        title: 'Prep',
+        subtitle: 'Restaurant App · Client Project',
+        description:
+            'A Flutter-based restaurant application being built for a client on a Supabase backend — covering menu browsing, ordering flows, and real-time order state. The MVP is under active development.',
         features: [
-            'Secure multi-tenant architecture.',
-            'Role-based access control (RBAC).',
-            'Centralized management of all campuses data.',
-            'Integrated real-time notifications',
+            'Cross-platform Flutter app from a single Dart codebase.',
+            'Supabase backend — Postgres, Auth, and realtime order updates.',
+            'Client-driven MVP scope with iterative weekly builds.',
         ],
-        stack: ['MERN', 'Tailwind CSS', 'JWT'],
-        image: "/Image1.png",
-        link: 'https://github.com/hamzashazy/albn-super',
-        link2: 'https://albn-super.vercel.app',
+        stack: ['Flutter', 'Dart', 'Supabase', 'PostgreSQL'],
+        status: 'in-progress',
+        statusLabel: 'In Progress · MVP',
+        featured: true,
+        accent: 'emerald',
+        github: 'https://github.com/hamzashazy',
     },
     {
-        title: 'ZaraiSense – Smart AgriTech Platform(In Progress)',
-description: 'An AI-powered AgriTech platform built with Firebase, helping farmers monitor crop health, optimize irrigation, and receive localized advisory through field agents and intelligent workflows.',
-features: [
-    'Crop health, yield, and irrigation optimization powered by AI.',
-    'Seamless integration with Google Firebase, Maps, Translate, and Analytics.',
-],
-stack: ['Firebase Studio', 'Next.js', 'Tailwind CSS', 'Google Cloud APIs'],
-
-        image: "/Image2.png",
-        link: 'https://github.com/hamzashazy',
-        link2: 'https://studio--studio-8734384923-1b975.us-central1.hosted.app',
+        title: 'WorkFusion',
+        subtitle: 'AI-Powered Hybrid Employment Marketplace · FYP',
+        description:
+            'A full-stack AI marketplace connecting employers and job seekers, with a Retrieval-Augmented Generation system for intelligent job/candidate matching using vector embeddings and semantic search.',
+        features: [
+            'RAG matching engine — embeddings, semantic search, similarity retrieval.',
+            'Secure hiring workflows with JWT auth and role-based access control.',
+            'Profile and review management across employer & candidate roles.',
+        ],
+        stack: ['Next.js', 'Express', 'MongoDB', 'FastAPI', 'RAG'],
+        status: 'in-progress',
+        statusLabel: 'Final Year Project',
+        featured: true,
+        accent: 'violet',
+        github: 'https://github.com/hamzashazy',
+    },
+    {
+        title: 'AI Meeting Assistant',
+        subtitle: 'Discord Bot',
+        description:
+            'An AI-powered Discord bot for meeting recording, note generation, summaries, and action-item extraction — wired into Claude Skills & Routines with Supabase for automated team documentation.',
+        features: [
+            'Automated meeting notes, summaries, and action items.',
+            'Claude Skills & Routines integrated with Supabase storage.',
+        ],
+        stack: ['Discord API', 'Claude API', 'Supabase'],
+        status: 'shipped',
+        statusLabel: 'Shipped',
+        featured: false,
+        accent: 'sky',
+        github: 'https://github.com/hamzashazy',
+    },
+    {
+        title: 'Campus Management System',
+        subtitle: 'Multi-Campus Admin Platform',
+        description:
+            'A multi-campus management system with role-based access for super admins and campus admins — modules for users, programs, and daily operations across campuses.',
+        features: [
+            'Multi-tenant architecture with RBAC.',
+            'Centralized management of all campus data.',
+        ],
+        stack: ['MERN', 'JWT', 'Tailwind CSS'],
+        status: 'shipped',
+        statusLabel: 'Shipped',
+        featured: false,
+        accent: 'amber',
+        image: '/Image1.png',
+        github: 'https://github.com/hamzashazy/albn-super',
+        live: 'https://albn-super.vercel.app',
+    },
+    {
+        title: 'ZaraiSense',
+        subtitle: 'Smart AgriTech Platform',
+        description:
+            'An AI-powered AgriTech platform helping farmers monitor crop health, optimize irrigation, and receive localized advisory through field agents and intelligent workflows.',
+        features: [
+            'AI-driven crop health, yield, and irrigation insights.',
+            'Google Firebase, Maps, Translate, and Analytics integrations.',
+        ],
+        stack: ['Next.js', 'Firebase', 'Google Cloud'],
+        status: 'in-progress',
+        statusLabel: 'In Progress',
+        featured: false,
+        accent: 'lime',
+        image: '/Image2.png',
+        github: 'https://github.com/hamzashazy',
+        live: 'https://studio--studio-8734384923-1b975.us-central1.hosted.app',
     },
     {
         title: 'Anonymous Messaging Platform',
-        description: 'A web application that allows users to send and receive anonymous messages, fostering open and honest communication.',
+        subtitle: 'Secure Feedback System',
+        description:
+            'A secure anonymous feedback system with JWT authentication and an admin moderation dashboard for viewing, managing, and analyzing messages.',
         features: [
-            'User authentication with JWT.',
-            'Admin dashboard to view, manage, and analyze messages.',
-            'Secure and private message handling.'
+            'JWT-authenticated anonymous messaging.',
+            'Admin moderation and analytics dashboard.',
         ],
-        stack: ['MERN Stack', 'Tailwind CSS', 'JWT'],
-        image: "/Image3.png",
-        link: 'https://github.com/hamzashazy/hidelybackend',
-        link2: 'https://hidely.vercel.app',
-    }
+        stack: ['MERN', 'JWT', 'Tailwind CSS'],
+        status: 'shipped',
+        statusLabel: 'Shipped',
+        featured: false,
+        accent: 'rose',
+        image: '/Image3.png',
+        github: 'https://github.com/hamzashazy/hidelybackend',
+        live: 'https://hidely.vercel.app',
+    },
 ];
 
-const SKILL_CATEGORIES = {
-    LANGUAGES: 'Languages',
-    FRAMEWORKS: 'Frameworks/Libraries',
-    TOOLS: 'Tools',
-} as const;
+export const skillsData = [
+    {
+        category: 'Languages',
+        skills: ['JavaScript', 'TypeScript', 'Python', 'Dart', 'Java', 'C++', 'SQL'],
+    },
+    {
+        category: 'Frontend',
+        skills: ['React', 'Next.js', 'Flutter', 'Tailwind CSS', 'Responsive UI'],
+    },
+    {
+        category: 'Backend & Databases',
+        skills: ['Node.js', 'Express', 'Next.js API Routes', 'MongoDB', 'Supabase', 'PostgreSQL', 'REST APIs', 'JWT / RBAC'],
+    },
+    {
+        category: 'AI & Automation',
+        skills: ['RAG', 'Vector Embeddings', 'Semantic Search', 'Claude API', 'Claude Skills & Routines', 'Make.com', 'Zapier'],
+    },
+    {
+        category: 'Tools & Platforms',
+        skills: ['Git', 'GitHub', 'Postman', 'Vercel', 'MongoDB Atlas', 'Firebase', 'Cursor (MCPs)', 'ClickUp', 'Jira'],
+    },
+];
 
-export const skillsData = {
-    categories: ['Frontend', 'Backend', 'Databases', 'Tools', 'Cloud', 'Version Control'],
-    skills: [
-        // Frontend
-        { name: 'React.js', category: 'Frontend' },
-        { name: 'Next.js', category: 'Frontend' },
-        { name: 'Tailwind CSS', category: 'Frontend' },
-        { name: 'HTML/CSS', category: 'Frontend' },
-        { name: 'JavaScript', category: 'Frontend' },
+export const marqueeTech = [
+    'Next.js', 'React', 'Flutter', 'Supabase', 'Node.js', 'MongoDB', 'Express',
+    'Claude API', 'RAG', 'FastAPI', 'Tailwind CSS', 'PostgreSQL', 'Firebase', 'TypeScript',
+];
 
-        // Backend
-        { name: 'Node.js', category: 'Backend' },
-        { name: 'Express.js', category: 'Backend' },
-        { name: 'JWT', category: 'Backend' },
-        { name: 'Python', category: 'Backend' },
-        { name: 'Java', category: 'Backend' },
+export const educationData = [
+    {
+        institution: 'National Skills University',
+        degree: 'BS Computer Science',
+        detail: 'CGPA 3.47',
+        period: '2022 – 2026 (Expected)',
+        location: 'Islamabad, Pakistan',
+    },
+];
 
-        // Databases
-        { name: 'MongoDB', category: 'Databases' },
-        { name: 'MongoDB Atlas', category: 'Databases' },
-        { name: 'SQL', category: 'Databases' },
+export const certificationsData = [
+    {
+        title: 'NAVTTC High Impact Training Program',
+        detail: 'Data Science, Blockchain & Artificial Intelligence',
+        issuer: 'NAVTTC',
+    },
+    {
+        title: 'Python Data Structures',
+        detail: 'Programming fundamentals & data structures in Python',
+        issuer: 'Coursera',
+    },
+    {
+        title: 'The Power of Object-Oriented Programming',
+        detail: 'OOP design principles and patterns',
+        issuer: 'Coursera',
+    },
+];
 
-        // Tools
-        { name: 'Git', category: 'Tools' },
-        { name: 'Postman', category: 'Tools' },
-        { name: 'VS Code', category: 'Tools' },
-        { name: 'Cursor', category: 'Tools' },
-        { name: 'Google Sheets', category: 'Tools' },
-        { name: 'Zapier', category: 'Tools' },
-        { name: 'Make.com', category: 'Tools' },
-
-        // Cloud
-        { name: 'Firebase', category: 'Cloud' },
-
-        // Version Control
-        { name: 'GitHub', category: 'Version Control' },
-    ]
+export const contactData = {
+    heading: "Let's build something that ships.",
+    subheading:
+        "Whether it's a full-stack product, a Flutter app, or an AI automation that saves your team hours — I'm one message away.",
+    items: [
+        { name: 'Email', value: heroData.contact.email, href: `mailto:${heroData.contact.email}`, icon: Mail },
+        { name: 'Phone', value: heroData.contact.phone, href: `tel:${heroData.contact.phone.replace(/\s/g, '')}`, icon: Phone },
+        { name: 'LinkedIn', value: 'in/hamzashazy', href: heroData.contact.linkedin, icon: Linkedin },
+        { name: 'GitHub', value: 'hamzashazy', href: heroData.contact.github, icon: Github },
+    ],
 };
