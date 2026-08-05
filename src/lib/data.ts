@@ -26,8 +26,8 @@ export const heroData = {
     stats: [
         { value: '10+', label: 'Projects shipped' },
         { value: '3', label: 'Stacks mastered' },
-        { value: '2026', label: 'CS grad (expected)' },
-        { value: '3.47', label: 'CGPA' },
+        { value: '2026', label: 'CS grad' },
+        { value: '3.48', label: 'CGPA' },
     ],
 };
 
@@ -231,8 +231,8 @@ export const educationData = [
     {
         institution: 'National Skills University',
         degree: 'BS Computer Science',
-        detail: 'CGPA 3.47',
-        period: '2022 – 2026 (Expected)',
+        detail: 'CGPA 3.48',
+        period: '2022 – 2026',
         location: 'Islamabad, Pakistan',
     },
 ];
