@@ -1,58 +1,23 @@
-import { Code2, MonitorSmartphone, Database, BrainCircuit, Wrench } from "lucide-react";
-
-import { skillsData } from "@/lib/data";
+import { skills } from "@/data/skills";
 import { Reveal, SectionHeading } from "@/components/reveal";
 
-const categoryIcons: Record<string, React.ElementType> = {
-  Languages: Code2,
-  Frontend: MonitorSmartphone,
-  "Backend & Databases": Database,
-  "AI & Automation": BrainCircuit,
-  "Tools & Platforms": Wrench,
-};
-
-export default function SkillsSection() {
+export function Skills() {
   return (
-    <section id="skills" className="py-20 md:py-28">
-      <div className="container mx-auto px-4 md:px-6">
-        <SectionHeading
-          index="03"
-          label="Skills"
-          title="The toolbox"
-          description="The languages, frameworks, and systems I reach for when it's time to ship."
-        />
-
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {skillsData.map((group, index) => {
-            const Icon = categoryIcons[group.category] ?? Code2;
-            return (
-              <Reveal
-                key={group.category}
-                delay={index * 80}
-                className={index === skillsData.length - 1 ? "md:col-span-2 lg:col-span-1" : ""}
-              >
-                <div className="glass h-full rounded-2xl p-6 transition-colors hover:border-primary/30">
-                  <div className="flex items-center gap-3">
-                    <span className="rounded-xl border border-primary/20 bg-primary/10 p-2.5 text-primary">
-                      <Icon className="h-5 w-5" />
-                    </span>
-                    <h3 className="font-headline text-lg font-bold">{group.category}</h3>
-                  </div>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {group.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="rounded-lg border border-border/60 bg-secondary/60 px-3 py-1.5 font-mono text-xs text-foreground/80 transition-colors hover:border-primary/40 hover:text-primary"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
+    <section id="skills" className="scroll-mt-16 px-5 py-10 sm:px-8 lg:px-12 lg:py-14 xl:px-16">
+      <SectionHeading index="03" label="Skills" title="What I build with" description="Grouped by where it shows up in the work above." />
+      <div className="grid gap-4 sm:grid-cols-2">
+        {skills.map((group, i) => (
+          <Reveal key={group.group} delay={i * 0.05} className="surface p-5 transition-colors duration-300 hover:border-primary/30">
+            <h3 className="font-mono text-[11px] tracking-[0.14em] text-muted-foreground uppercase">{group.group}</h3>
+            <ul className="mt-3 flex flex-wrap gap-2">
+              {group.items.map((s) => (
+                <li key={s} className="rounded-lg border border-border bg-background px-2.5 py-1 text-sm transition-colors duration-200 hover:border-primary/40 hover:text-primary">
+                  {s}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        ))}
       </div>
     </section>
   );

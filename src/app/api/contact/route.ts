@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
     // Verify; if it fails, try TLS 587 fallback
     try {
       await transporter.verify();
-    } catch (primaryError) {
+    } catch {
       try {
         transporter = nodemailer.createTransport({
           host: "smtp.gmail.com",
@@ -76,7 +76,7 @@ export async function POST(req: NextRequest) {
         { status: 500 }
       );
     }
-  } catch (err) {
+  } catch {
     return new Response(JSON.stringify({ error: "Server error parsing request." }), { status: 500 });
   }
 }
