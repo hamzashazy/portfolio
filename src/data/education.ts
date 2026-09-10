@@ -1,8 +1,8 @@
 export const education = {
   institution: "National Skills University",
   degree: "BS Computer Science",
-  detail: "CGPA 3.47",
-  period: "2022 – 2026",
+  detail: "CGPA 3.48",
+  period: "2022 – 2026 · Graduated",
   location: "Islamabad, Pakistan",
 };
 

@@ -17,7 +17,7 @@ export const profile = {
   resume: "/resume.pdf",
   avatar: "/prof.jpg",
   about: [
-    "I am a full stack developer from Islamabad finishing a BS in Computer Science while working part-time at Miana, a US real estate company, where I maintain a Next.js CRM and build AI automations around it.",
+    "I am a full stack developer from Islamabad with a BS in Computer Science (class of 2026), working part-time at Miana, a US real estate company, where I maintain a Next.js CRM and build AI automations around it.",
     "Outside work I build products end to end: Next.js storefronts on Supabase, Flutter games with real physics, a Tauri desktop app that restaurants install, and an employee-tracking system with its own Electron tracker. I care about the unglamorous parts too: release pipelines, row-level security, offline caches, auto-updates.",
     "I lean on Claude Code and agentic workflows heavily, which is how one person keeps eighteen projects moving.",
   ],

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { AnimatePresence, LayoutGroup, motion } from "motion/react";
 import { Compass, X } from "lucide-react";
 import { CATEGORIES, STATUSES, type Category, type Status } from "@/data/types";
@@ -16,6 +16,20 @@ const ease = [0.16, 1, 0.3, 1] as const;
 export function WorkGrid() {
   const [tab, setTab] = useState<Tab>("all");
   const [status, setStatus] = useState<Status | null>(null);
+  const barRef = useRef<HTMLDivElement>(null);
+
+  /** When the filter bar is stuck (the grid is scrolled past), keep the section in view so a shorter result set does not jump the page. */
+  const keepInView = () => {
+    const bar = barRef.current;
+    if (!bar) return;
+    const section = document.getElementById("work");
+    if (section && bar.getBoundingClientRect().top < 80 && section.getBoundingClientRect().top < 0) {
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      section.scrollIntoView({ block: "start", behavior: reduce ? "auto" : "smooth" });
+    }
+  };
+  const selectTab = (t: Tab) => { keepInView(); setTab(t); };
+  const selectStatus = (s: Status | null) => { keepInView(); setStatus(s); };
 
   const visible = useMemo(
     () => sortedProjects.filter((p) => (tab === "all" || p.category === tab) && (!status || p.status === status)),
@@ -31,7 +45,7 @@ export function WorkGrid() {
 
   return (
     <div>
-      <div className="sticky top-[61px] z-30 -mx-5 border-y border-border bg-background/85 px-5 py-3 backdrop-blur sm:-mx-8 sm:px-8 lg:top-0 lg:-mx-12 lg:px-12 xl:-mx-16 xl:px-16">
+      <div ref={barRef} className="sticky top-[61px] z-30 -mx-5 border-y border-border bg-background/85 px-5 py-3 backdrop-blur sm:-mx-8 sm:px-8 lg:top-0 lg:-mx-12 lg:px-12 xl:-mx-16 xl:px-16">
         <div role="tablist" aria-label="Project categories" className="scrollbar-none -mx-1 flex gap-1 overflow-x-auto px-1">
           <LayoutGroup id="work-tabs">
             {([{ id: "all" as const, label: "All", short: "All" }, ...CATEGORIES] as { id: Tab; label: string; short: string }[]).map((c) => {
@@ -43,7 +57,7 @@ export function WorkGrid() {
                   role="tab"
                   type="button"
                   aria-selected={selected}
-                  onClick={() => setTab(c.id)}
+                  onClick={() => selectTab(c.id)}
                   className={cn(
                     "relative inline-flex h-9 shrink-0 cursor-pointer items-center gap-2 rounded-full px-3.5 text-sm transition-colors duration-200 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none",
                     selected ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground",
@@ -73,7 +87,7 @@ export function WorkGrid() {
                 key={s.id}
                 type="button"
                 aria-pressed={selected}
-                onClick={() => setStatus(selected ? null : s.id)}
+                onClick={() => selectStatus(selected ? null : s.id)}
                 className={cn(
                   "inline-flex h-7 shrink-0 cursor-pointer items-center gap-1.5 rounded-full border px-2.5 font-mono text-[11px] transition-all duration-200 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none",
                   selected ? "border-foreground/40 bg-foreground text-background" : "border-border bg-card text-muted-foreground hover:border-foreground/30 hover:text-foreground",
@@ -92,7 +106,7 @@ export function WorkGrid() {
                 initial={{ opacity: 0, x: -6 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -6 }}
-                onClick={() => setStatus(null)}
+                onClick={() => selectStatus(null)}
                 className="inline-flex h-7 shrink-0 cursor-pointer items-center gap-1 rounded-full px-2 font-mono text-[11px] text-muted-foreground hover:text-foreground"
               >
                 <X className="size-3" /> clear

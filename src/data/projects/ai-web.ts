@@ -6,8 +6,8 @@ export const aiWeb: Project[] = [
     title: "WorkFusion",
     tagline: "AI-powered hybrid employment marketplace with RAG-based job and candidate matching.",
     category: "ai-web",
-    status: "in-development",
-    statusNote: "Final year project",
+    status: "shipped",
+    statusNote: "Final year project, completed",
     platforms: ["web"],
     stack: ["Next.js", "Express", "MongoDB Atlas", "FastAPI", "RAG"],
     role: "Final year project",
@@ -22,13 +22,12 @@ export const aiWeb: Project[] = [
     ],
     links: {},
     summary:
-      "WorkFusion unifies online freelancing and local, physical services in one marketplace. A FastAPI service turns profiles and job posts into vector embeddings so matching is semantic rather than keyword-based.",
+      "WorkFusion unifies online freelancing and local, physical services in one marketplace. A FastAPI service turns profiles and job posts into vector embeddings so matching is semantic rather than keyword-based. Built and defended as my final year project; degree completed in 2026.",
     highlights: [
       "Retrieval-Augmented Generation pipeline: embeddings, semantic search and similarity retrieval for matching.",
       "JWT authentication with role-based access for employers and candidates.",
       "Profiles, reviews and hiring workflows across a Next.js front end and Express API.",
     ],
-    next: "Evaluation of match quality and a public beta.",
   },
   {
     slug: "meeting-assistant",
