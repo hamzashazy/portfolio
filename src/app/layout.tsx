@@ -1,43 +1,58 @@
-import type { Metadata } from 'next';
-import { Inter, Sora, JetBrains_Mono } from 'next/font/google';
-import './globals.css';
-import { Toaster } from '@/components/ui/toaster';
-import { ThemeProvider } from '@/components/theme-provider';
+import type { Metadata, Viewport } from "next";
+import { Bricolage_Grotesque, Geist, JetBrains_Mono } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Sidebar } from "@/components/shell/sidebar";
+import { MobileHeader } from "@/components/shell/mobile-header";
+import { profile } from "@/data/profile";
+import "./globals.css";
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-body' });
-const sora = Sora({ subsets: ['latin'], variable: '--font-headline' });
-const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
+const bricolage = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-bricolage", display: "swap" });
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
+const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains", display: "swap" });
 
 export const metadata: Metadata = {
-  title: 'Hamza Shahzad — Full Stack Developer · AI Automation',
-  description:
-    'Portfolio of Hamza Shahzad — Full Stack Developer building scalable web & mobile applications with Next.js, Flutter, Supabase, and Claude-powered AI automations.',
-  keywords: ['Full Stack Developer', 'Next.js', 'Flutter', 'Supabase', 'AI Automation', 'MERN', 'Hamza Shahzad'],
-  openGraph: {
-    title: 'Hamza Shahzad — Full Stack Developer · AI Automation',
-    description:
-      'Building scalable web & mobile products — Next.js CRMs, Flutter apps, and Claude-powered automations.',
-    url: 'https://hamzashazy.vercel.app',
-    type: 'website',
+  metadataBase: new URL(profile.site),
+  title: {
+    default: `${profile.name} · ${profile.role}`,
+    template: `%s · ${profile.name}`,
   },
+  description:
+    "Full stack developer building products that ship: e-commerce storefronts, Flutter games, desktop business systems and AI tools. Next.js, Supabase, Flutter, Tauri.",
+  keywords: ["Hamza Shahzad", "full stack developer", "Next.js", "Flutter", "Supabase", "Tauri", "Islamabad", "portfolio"],
+  authors: [{ name: profile.name, url: profile.site }],
+  creator: profile.name,
+  openGraph: {
+    type: "website",
+    url: profile.site,
+    siteName: profile.name,
+    title: `${profile.name} · ${profile.role}`,
+    description: "Storefronts, games, business systems and AI tools, each with a real status in the market.",
+  },
+  twitter: { card: "summary_large_image", title: `${profile.name} · ${profile.role}` },
+  robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#1a1917" },
+    { media: "(prefers-color-scheme: light)", color: "#fbfaf8" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${sora.variable} ${jetbrainsMono.variable} font-body antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <Toaster />
+    <html lang="en" suppressHydrationWarning className={`${bricolage.variable} ${geist.variable} ${jetbrains.variable}`}>
+      <body className="min-h-dvh">
+        <ThemeProvider>
+          <div className="lg:grid lg:grid-cols-[300px_minmax(0,1fr)] xl:grid-cols-[320px_minmax(0,1fr)]">
+            <Sidebar />
+            <MobileHeader />
+            <main id="main" className="min-w-0">
+              {children}
+            </main>
+          </div>
         </ThemeProvider>
       </body>
     </html>
