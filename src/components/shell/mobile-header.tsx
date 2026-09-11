@@ -26,6 +26,16 @@ export function MobileHeader() {
           </span>
         </span>
       </Link>
+      <a
+        href={profile.resume}
+        download="Hamza-Shahzad-Resume.pdf"
+        aria-label="Download resume"
+        title="Download resume"
+        className="inline-flex h-9 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-full bg-primary px-3 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/25 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none sm:px-4"
+      >
+        <FileDown className="size-4" />
+        <span className="hidden sm:inline">Resume</span>
+      </a>
       <ThemeToggle />
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
