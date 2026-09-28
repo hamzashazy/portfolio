@@ -4,10 +4,10 @@ export const systems: Project[] = [
   {
     slug: "restaurant-manager",
     title: "Restaurant Manager",
-    tagline: "Desktop restaurant operations: orders, tables, kitchen, stock, staff and reports, with auto-update.",
+    tagline: "AI-driven restaurant management SaaS: website, desktop POS and back office, with sales and stock insights.",
     category: "systems",
-    status: "shipped",
-    statusNote: "Installers in customers' hands",
+    status: "testing",
+    statusNote: "Pre-launch SaaS",
     platforms: ["desktop"],
     stack: ["Tauri 2", "React 19", "Vite", "Supabase", "TanStack Query"],
     role: "Solo build",
@@ -27,14 +27,14 @@ export const systems: Project[] = [
     ],
     links: {},
     summary:
-      "A full point-of-sale and back office for restaurants that installs like a normal desktop app on Windows, macOS and Linux. Orders, tables, kitchen tickets, menu, stock and purchases, customers, staff, expenses, reports and printed bills, all backed by Supabase.",
+      "A complete AI-driven restaurant management product, built as a SaaS and not yet launched to customers. A marketing website plus a point-of-sale and back office that installs like a normal desktop app on Windows, macOS and Linux: orders, tables, kitchen tickets, menu, stock and purchases, customers, staff, expenses, reports and printed bills, all backed by Supabase, with AI-driven sales and stock insights.",
     highlights: [
       "Tauri 2 shell around a React app, so one codebase ships native installers for three operating systems.",
       "GitHub Actions builds signed-style installers on every version tag and publishes them to a public releases repo while the source stays private.",
-      "In-app auto-update through the Tauri updater, so restaurants never reinstall.",
+      "In-app auto-update through the Tauri updater, so restaurants will never need to reinstall.",
       "Offline-tolerant data layer with persisted TanStack Query cache, PDF bills and Excel exports, English and Urdu UI.",
     ],
-    next: "Code-signing certificates and a printer-driver compatibility pass.",
+    next: "Code-signing certificates, a printer-driver compatibility pass, then launch to the first restaurants.",
   },
   {
     slug: "ems",
