@@ -7,7 +7,7 @@ import { Reveal, SectionHeading } from "@/components/reveal";
 export function About() {
   return (
     <section id="about" className="scroll-mt-16 px-5 py-10 sm:px-8 lg:px-12 lg:py-14 xl:px-16">
-      <SectionHeading index="04" label="About" title="One developer, eighteen products" />
+      <SectionHeading index="04" label="About" title="One developer, AI-first products" />
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
         <Reveal className="space-y-4 text-base leading-relaxed text-foreground/90">
           <div className="relative float-right mb-2 ml-5 size-28 overflow-hidden rounded-2xl ring-1 ring-border sm:size-36">

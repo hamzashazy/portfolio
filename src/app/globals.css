@@ -40,8 +40,8 @@
   /* Category accents: used on pills, icons and placeholder gradients only. */
   --color-cat-ecommerce: var(--cat-ecommerce);
   --color-cat-games: var(--cat-games);
-  --color-cat-systems: var(--cat-systems);
-  --color-cat-ai-web: var(--cat-ai-web);
+  --color-cat-automation: var(--cat-automation);
+  --color-cat-ai: var(--cat-ai);
 
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-bricolage), var(--font-geist), ui-sans-serif, sans-serif;
@@ -103,8 +103,8 @@
 
   --cat-ecommerce: oklch(0.68 0.15 70);
   --cat-games: oklch(0.58 0.18 300);
-  --cat-systems: oklch(0.6 0.13 235);
-  --cat-ai-web: oklch(0.55 0.14 162);
+  --cat-automation: oklch(0.6 0.13 235);
+  --cat-ai: oklch(0.55 0.14 162);
 }
 
 /* Dark theme: warm near-black, soft ink, brighter emerald. */
@@ -143,8 +143,8 @@
 
   --cat-ecommerce: oklch(0.82 0.15 75);
   --cat-games: oklch(0.76 0.16 300);
-  --cat-systems: oklch(0.78 0.13 232);
-  --cat-ai-web: oklch(0.8 0.16 162);
+  --cat-automation: oklch(0.78 0.13 232);
+  --cat-ai: oklch(0.8 0.16 162);
 }
 
 @layer base {

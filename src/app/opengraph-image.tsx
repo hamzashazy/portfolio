@@ -13,7 +13,7 @@ export default function Image() {
         <div style={{ fontSize: 24, color: "#a8a49c", letterSpacing: 2, textTransform: "uppercase" }}>Portfolio</div>
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <div style={{ fontSize: 92, fontWeight: 700, lineHeight: 1.02, letterSpacing: -2 }}>{profile.headline}</div>
-          <div style={{ fontSize: 34, color: "#c9c5bd", maxWidth: 1000 }}>{`${projects.length} products · ${countByStatus("live")} live · storefronts, games, systems, AI tools`}</div>
+          <div style={{ fontSize: 34, color: "#c9c5bd", maxWidth: 1000 }}>{`${projects.length} products · ${countByStatus("live")} live · AI products, automation, commerce, games`}</div>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", fontSize: 26, color: "#a8a49c" }}>
           <span>{`${profile.name} · ${profile.role}`}</span>

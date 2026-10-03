@@ -1,4 +1,4 @@
-export type Category = "ecommerce" | "games" | "systems" | "ai-web";
+export type Category = "ai" | "automation" | "ecommerce" | "games";
 
 export type Status =
   | "live"
@@ -16,6 +16,14 @@ export type Screenshot = {
   src: string;
   alt: string;
   frame: Frame;
+};
+
+/** A short product film. Never preloaded: the page only fetches it when the visitor presses play. */
+export type Film = {
+  src: string;
+  poster: string;
+  /** Length in seconds, shown on the play button. */
+  seconds: number;
 };
 
 export type ProjectLinks = {
@@ -48,6 +56,7 @@ export type Project = {
   cover?: Screenshot;
   icon?: string;
   screenshots: Screenshot[];
+  film?: Film;
   links: ProjectLinks;
   summary: string;
   highlights: string[];
@@ -56,10 +65,10 @@ export type Project = {
 };
 
 export const CATEGORIES: { id: Category; label: string; short: string; blurb: string }[] = [
-  { id: "ecommerce", label: "E-Commerce", short: "Stores", blurb: "Storefronts and shopping apps for real brands." },
-  { id: "games", label: "Games", short: "Games", blurb: "Mobile games built in Flutter, from physics puzzles to shooters." },
-  { id: "systems", label: "Business Systems", short: "Systems", blurb: "Desktop and web tools that run day-to-day operations." },
-  { id: "ai-web", label: "AI & Web", short: "AI & Web", blurb: "Platforms, bots and AI-assisted workflows." },
+  { id: "ai", label: "AI Products", short: "AI", blurb: "Products with AI at the core: recommendations, semantic matching and LLM agents." },
+  { id: "automation", label: "Automation & Systems", short: "Systems", blurb: "Business systems and the AI automations that take manual steps out of them." },
+  { id: "ecommerce", label: "Commerce", short: "Stores", blurb: "Storefronts and shopping apps for real brands." },
+  { id: "games", label: "Games", short: "Games", blurb: "Mobile games built in Flutter: a physics puzzle on Google Play and a learning adventure for kids." },
 ];
 
 export const STATUSES: { id: Status; label: string; description: string }[] = [

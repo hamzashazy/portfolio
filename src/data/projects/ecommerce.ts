@@ -23,6 +23,7 @@ export const ecommerce: Project[] = [
       { src: "/projects/sababa/mobile.webp", alt: "Storefront on a phone", frame: "phone" },
       { src: "/projects/sababa/admin-login.webp", alt: "Admin panel sign-in", frame: "browser" },
     ],
+    film: { src: "/projects/sababa/film.mp4", poster: "/projects/sababa/film-poster.webp", seconds: 21 },
     links: { live: "https://sababa-beige.vercel.app" },
     summary:
       "Sababa is a premium fragrance brand for the Pakistani market: twelve scents, one monochrome identity. I built the whole thing, from the storefront and cart to the order pipeline and a built-in admin panel, on Next.js and Supabase.",
@@ -89,6 +90,7 @@ export const ecommerce: Project[] = [
       { src: "/projects/dastaar/satchel.webp", alt: "Cambridge leather satchel", frame: "none" },
       { src: "/projects/dastaar/heritage.webp", alt: "Heritage de Belgique bag", frame: "none" },
     ],
+    film: { src: "/projects/dastaar/film.mp4", poster: "/projects/dastaar/film-poster.webp", seconds: 21 },
     links: { live: "https://dastaar.vercel.app" },
     summary:
       "Dastaar is a men's leather bags, wallets and jewellery brand. I rebuilt its storefront for the Pakistani market with cash on delivery, a wishlist and a product gallery that lets the photography do the talking.",
@@ -102,12 +104,12 @@ export const ecommerce: Project[] = [
   {
     slug: "kavoor",
     title: "Kavoor",
-    tagline: "Offline-first shopping app for a small-batch perfume brand.",
+    tagline: "Native Android shopping app for a small-batch perfume brand, in Kotlin and Jetpack Compose.",
     category: "ecommerce",
     status: "testing",
-    statusNote: "Play Store release next",
-    platforms: ["android", "ios"],
-    stack: ["Flutter", "Riverpod", "GoRouter", "Supabase", "Drift"],
+    statusNote: "Release build ready",
+    platforms: ["android"],
+    stack: ["Kotlin", "Jetpack Compose", "Material 3", "Navigation Compose", "kotlinx.serialization"],
     role: "Client brand",
     year: 2026,
     market: true,
@@ -115,17 +117,18 @@ export const ecommerce: Project[] = [
     order: 4,
     cover: { src: "/projects/kavoor/home.webp", alt: "Kavoor app home: Scents made slowly, worn all day", frame: "phone" },
     screenshots: [
-      { src: "/projects/kavoor/home.webp", alt: "Home screen (Linux desktop build) with the offline banner over the cached catalogue", frame: "phone" },
+      { src: "/projects/kavoor/home.webp", alt: "Home screen, from the earlier Flutter build of the app", frame: "phone" },
     ],
     links: { original: "https://kavoor.store" },
     summary:
-      "Kavoor's website already existed; the brand wanted a mobile app that could stand on its own. I designed the app in Figma, built it in Flutter and gave it its own Supabase backend with catalogue, cart, cash-on-delivery checkout, order tracking and accounts.",
+      "Kavoor's website already existed; the brand wanted a mobile app that could stand on its own. After a first Flutter build on Supabase, I rebuilt it as a native Android app in Kotlin and Jetpack Compose: the real catalogue, prices, fragrance notes, reviews, journal and policies from kavoor.store, bundled so the whole store works offline.",
     highlights: [
-      "Eighty-plus Dart files organised feature-first with Riverpod state and GoRouter navigation.",
-      "Drift + SQLite offline cache so browsing and the cart keep working without signal.",
-      "Guest checkout with a later account handover, so first orders never hit a sign-up wall.",
-      "Catalogue import and AI image generation scripts for the backend, plus a staff admin flow.",
+      "Seventeen-plus screens: onboarding, shop, product, search, wishlist, bag, checkout, orders, account, scent guide, FAQ and journal.",
+      "The site's own design tokens: black and bone with gold, Cormorant Garamond and Archivo, in light, dark and system themes.",
+      "Motion throughout: shared-element transition from card to product page, parallax, staggered reveals and spring feedback, with reduced-motion respected.",
+      "Mirrors the store's rules: cash on delivery, cancellation only before dispatch, a 24-hour exchange window, and WhatsApp-first contact.",
+      "R8-minified release APK of about 2.5 MB.",
     ],
-    next: "Hardening pass, Play Store release, then iOS via TestFlight.",
+    next: "Connect the app to the Supabase backend from the Flutter build, sign with a release keystore, then the Play Store.",
   },
 ];

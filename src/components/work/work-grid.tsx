@@ -2,7 +2,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import { AnimatePresence, LayoutGroup, motion } from "motion/react";
-import { Compass, X } from "lucide-react";
+import { ChevronDown, Compass, X } from "lucide-react";
 import { CATEGORIES, STATUSES, type Category, type Status } from "@/data/types";
 import { sortedProjects } from "@/data/projects";
 import { categoryIcon } from "@/lib/categories";
@@ -12,10 +12,13 @@ import { ProjectCard } from "./project-card";
 
 type Tab = "all" | Category;
 const ease = [0.16, 1, 0.3, 1] as const;
+const MOBILE_LIMIT = 5;
 
 export function WorkGrid() {
   const [tab, setTab] = useState<Tab>("all");
   const [status, setStatus] = useState<Status | null>(null);
+  /** Phones start with a short list so the sections below the work stay within reach. */
+  const [expanded, setExpanded] = useState(false);
   const barRef = useRef<HTMLDivElement>(null);
 
   /** When the filter bar is stuck (the grid is scrolled past), keep the section in view so a shorter result set does not jump the page. */
@@ -133,14 +136,24 @@ export function WorkGrid() {
       </AnimatePresence>
 
       <LayoutGroup id="work-grid">
-        <motion.div layout className="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <motion.div layout className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5">
           <AnimatePresence mode="popLayout" initial={false}>
             {visible.map((p, i) => (
-              <ProjectCard key={p.slug} project={p} index={i} large={showLarge && p.featured} />
+              <ProjectCard key={p.slug} project={p} index={i} large={showLarge && p.featured} mobileHidden={!expanded && i >= MOBILE_LIMIT} />
             ))}
           </AnimatePresence>
         </motion.div>
       </LayoutGroup>
+
+      {!expanded && visible.length > MOBILE_LIMIT ? (
+        <button
+          type="button"
+          onClick={() => setExpanded(true)}
+          className="mt-3 inline-flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-xl border border-border bg-card text-sm font-medium transition-colors duration-200 hover:border-primary/40 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none sm:hidden"
+        >
+          Show all {visible.length} projects <ChevronDown className="size-4" />
+        </button>
+      ) : null}
 
       <AnimatePresence>
         {visible.length === 0 ? (
