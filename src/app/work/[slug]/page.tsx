@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Download, ExternalLink, Globe, Monitor, Smartphone, Apple, MessageSquare, Globe2 } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
 import { Gallery } from "@/components/work/gallery";
+import { Film } from "@/components/work/film";
 import { DeviceFrame } from "@/components/work/device-frame";
 import { StatusPill } from "@/components/work/status-pill";
 import { Reveal } from "@/components/reveal";
@@ -115,6 +116,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </p>
         ) : null}
       </Reveal>
+
+      {project.film ? (
+        <Reveal className="mt-10">
+          <h2 className="label-mono">The {project.film.seconds}-second film</h2>
+          <Film film={project.film} title={project.title} className="mt-3" />
+        </Reveal>
+      ) : null}
 
       <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
         <div className="space-y-10">

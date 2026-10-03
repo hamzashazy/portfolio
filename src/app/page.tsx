@@ -1,4 +1,5 @@
 import { Intro } from "@/components/sections/intro";
+import { Services } from "@/components/sections/services";
 import { Work } from "@/components/sections/work";
 import { Experience } from "@/components/sections/experience";
 import { Skills } from "@/components/sections/skills";
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <div className="mx-auto max-w-[1180px]">
       <Intro />
+      <Services />
       <Work />
       <Experience />
       <Skills />

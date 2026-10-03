@@ -1,11 +1,11 @@
-import { Bot, Gamepad2, LayoutDashboard, ShoppingBag, type LucideIcon } from "lucide-react";
+import { Gamepad2, ShoppingBag, Sparkles, Workflow, type LucideIcon } from "lucide-react";
 import type { Category, Status } from "@/data/types";
 
 export const categoryIcon: Record<Category, LucideIcon> = {
+  ai: Sparkles,
+  automation: Workflow,
   ecommerce: ShoppingBag,
   games: Gamepad2,
-  systems: LayoutDashboard,
-  "ai-web": Bot,
 };
 
 /** Tailwind classes keyed by category. Kept as full literals so Tailwind can see them. */
@@ -22,17 +22,17 @@ export const categoryClass: Record<Category, { text: string; bg: string; ring: s
     ring: "ring-cat-games/30",
     gradient: "from-cat-games/35 via-cat-games/10 to-transparent",
   },
-  systems: {
-    text: "text-cat-systems",
-    bg: "bg-cat-systems/12",
-    ring: "ring-cat-systems/30",
-    gradient: "from-cat-systems/35 via-cat-systems/10 to-transparent",
+  automation: {
+    text: "text-cat-automation",
+    bg: "bg-cat-automation/12",
+    ring: "ring-cat-automation/30",
+    gradient: "from-cat-automation/35 via-cat-automation/10 to-transparent",
   },
-  "ai-web": {
-    text: "text-cat-ai-web",
-    bg: "bg-cat-ai-web/12",
-    ring: "ring-cat-ai-web/30",
-    gradient: "from-cat-ai-web/35 via-cat-ai-web/10 to-transparent",
+  ai: {
+    text: "text-cat-ai",
+    bg: "bg-cat-ai/12",
+    ring: "ring-cat-ai/30",
+    gradient: "from-cat-ai/35 via-cat-ai/10 to-transparent",
   },
 };
 

@@ -7,7 +7,7 @@ export function Work() {
       <SectionHeading
         index="01"
         label="Work"
-        title="Products, with their real status"
+        title="AI-driven products, with their real status"
         description="Every card says where the thing actually is: live, in testing, waiting on a store review, shipped, or still being built."
       />
       <WorkGrid />

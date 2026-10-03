@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     template: `%s · ${profile.name}`,
   },
   description:
-    "Full stack developer building products that ship: e-commerce storefronts, Flutter games, desktop business systems and AI tools. Next.js, Supabase, Flutter, Tauri.",
-  keywords: ["Hamza Shahzad", "full stack developer", "Next.js", "Flutter", "Supabase", "Tauri", "Islamabad", "portfolio"],
+    "AI solutions developer building products that ship: recommendation engines, RAG matching, LLM agents and automations, plus the storefronts, apps and business systems around them. Next.js, Supabase, Flutter, Claude API.",
+  keywords: ["Hamza Shahzad", "AI solutions developer", "AI automation", "RAG", "Claude API", "full stack developer", "Next.js", "Flutter", "Supabase", "Tauri", "Islamabad", "portfolio"],
   authors: [{ name: profile.name, url: profile.site }],
   creator: profile.name,
   openGraph: {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     url: profile.site,
     siteName: profile.name,
     title: `${profile.name} · ${profile.role}`,
-    description: "Storefronts, games, business systems and AI tools, each with a real status in the market.",
+    description: "AI products, automations, storefronts and games, each with a real status in the market.",
   },
   twitter: { card: "summary_large_image", title: `${profile.name} · ${profile.role}` },
   robots: { index: true, follow: true },

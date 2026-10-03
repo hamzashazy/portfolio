@@ -1,12 +1,12 @@
 import type { Category, Project, Status } from "../types";
 import { ecommerce } from "./ecommerce";
 import { games } from "./games";
-import { systems } from "./systems";
-import { aiWeb } from "./ai-web";
+import { automation } from "./automation";
+import { ai } from "./ai";
 
-export const projects: Project[] = [...ecommerce, ...games, ...systems, ...aiWeb];
+export const projects: Project[] = [...ai, ...automation, ...ecommerce, ...games];
 
-const categoryRank: Record<Category, number> = { ecommerce: 0, games: 1, systems: 2, "ai-web": 3 };
+const categoryRank: Record<Category, number> = { ai: 0, automation: 1, ecommerce: 2, games: 3 };
 
 /** Featured first, then by category, then by each project's own order. */
 export const sortedProjects = [...projects].sort((a, b) => {
