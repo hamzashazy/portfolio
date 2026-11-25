@@ -63,7 +63,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const shots = project.screenshots.length > 0 ? project.screenshots : project.cover ? [project.cover] : [];
 
   return (
-    <article className="mx-auto max-w-[1180px] px-5 py-8 sm:px-8 lg:px-12 lg:py-12 xl:px-16">
+    <article className="shell pt-12 pb-16 lg:pb-24">
       <Reveal>
         <Link href="/#work" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground">
           <ArrowLeft className="size-4" /> All work
@@ -79,8 +79,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       </Reveal>
 
       <Reveal delay={0.1}>
-        <h1 className="mt-4 text-4xl font-semibold sm:text-5xl">{project.title}</h1>
-        <p className="mt-3 max-w-2xl text-lg text-muted-foreground">{project.tagline}</p>
+        <h1 className="mt-4 font-display text-[clamp(2.2rem,5.4vw,4.2rem)] leading-[1.05] font-bold tracking-[-0.025em]">{project.title}</h1>
+        <p className="mt-3 max-w-2xl text-lg font-light text-muted-foreground">{project.tagline}</p>
       </Reveal>
 
       {linkButtons.length > 0 ? (
@@ -91,10 +91,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className={cn(
-                "inline-flex h-10 cursor-pointer items-center gap-2 rounded-xl px-4 text-sm font-medium transition-all duration-200 hover:-translate-y-0.5 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none",
-                primary ? "bg-primary text-primary-foreground hover:shadow-lg hover:shadow-primary/25" : "border border-border bg-card hover:border-primary/40",
-              )}
+              className={primary ? "btn-solid" : "btn-outline"}
             >
               <LIcon className="size-4" /> {label}
             </a>
@@ -182,10 +179,15 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </Reveal>
       </div>
 
-      <nav className="mt-14 grid gap-3 border-t border-border pt-6 sm:grid-cols-2" aria-label="More work">
+      <nav className="mt-14 grid gap-3 border-t border-border pt-6 sm:grid-cols-2 sm:gap-4" aria-label="More work">
         <PagerLink project={prev} dir="prev" />
         <PagerLink project={next} dir="next" />
       </nav>
+      <div className="mt-10 flex justify-center">
+        <Link href="/#contact" className="btn-solid">
+          Start a project <ArrowRight className="size-4" aria-hidden="true" />
+        </Link>
+      </div>
     </article>
   );
 }
@@ -200,20 +202,24 @@ function Meta({ label, children }: { label: string; children: React.ReactNode })
 }
 
 function PagerLink({ project, dir }: { project: (typeof sortedProjects)[number]; dir: "prev" | "next" }) {
+  const isNext = dir === "next";
+  const Arrow = isNext ? ArrowRight : ArrowLeft;
   return (
     <Link
       href={`/work/${project.slug}`}
       className={cn(
-        "group surface flex items-center gap-4 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40",
-        dir === "next" ? "sm:flex-row-reverse sm:text-right" : "",
+        "group surface flex min-h-32 flex-col justify-between gap-6 p-5 transition-[translate,border-color] duration-200 hover:-translate-y-0.5 hover:border-primary/40 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none sm:p-6",
+        isNext && "sm:text-right",
       )}
     >
-      <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors group-hover:text-primary">
-        {dir === "prev" ? <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-0.5" /> : <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />}
+      <span className={cn("label-mono flex items-center gap-2", isNext && "sm:justify-end")}>
+        {!isNext ? <Arrow className="size-4 transition-transform duration-200 ease-out group-hover:-translate-x-1" aria-hidden="true" /> : null}
+        {isNext ? "Next" : "Previous"}
+        {isNext ? <Arrow className="size-4 transition-transform duration-200 ease-out group-hover:translate-x-1" aria-hidden="true" /> : null}
       </span>
-      <span className="min-w-0">
-        <span className="label-mono block">{dir === "prev" ? "Previous" : "Next"}</span>
-        <span className="block truncate font-medium">{project.title}</span>
+      <span className="block min-w-0">
+        <span className="block font-display text-2xl leading-tight font-bold sm:text-3xl">{project.title}</span>
+        <span className="mt-1 block truncate text-sm text-muted-foreground">{project.tagline}</span>
       </span>
     </Link>
   );

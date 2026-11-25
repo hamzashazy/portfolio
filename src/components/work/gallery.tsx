@@ -43,16 +43,16 @@ export function Gallery({ shots, title, category }: { shots: Screenshot[]; title
           type="button"
           onClick={() => setOpen(true)}
           aria-label="Open full size"
-          className="absolute top-3 right-3 z-10 inline-flex size-9 cursor-pointer items-center justify-center rounded-full border border-border bg-background/80 text-muted-foreground backdrop-blur transition-colors hover:text-foreground"
+          className="absolute top-3 right-3 z-10 inline-flex size-9 pointer-coarse:size-11 cursor-pointer items-center justify-center rounded-full border border-border bg-background/80 text-muted-foreground backdrop-blur transition-colors hover:text-foreground"
         >
           <Maximize2 className="size-4" />
         </button>
         {shots.length > 1 ? (
           <>
-            <button type="button" onClick={() => go(index - 1)} aria-label="Previous screenshot" className="absolute top-1/2 left-3 z-10 inline-flex size-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-border bg-background/80 backdrop-blur transition-colors hover:text-primary">
+            <button type="button" onClick={() => go(index - 1)} aria-label="Previous screenshot" className="absolute top-1/2 left-3 z-10 inline-flex size-9 pointer-coarse:size-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-border bg-background/80 backdrop-blur transition-colors hover:text-primary">
               <ChevronLeft className="size-4" />
             </button>
-            <button type="button" onClick={() => go(index + 1)} aria-label="Next screenshot" className="absolute top-1/2 right-3 z-10 inline-flex size-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-border bg-background/80 backdrop-blur transition-colors hover:text-primary">
+            <button type="button" onClick={() => go(index + 1)} aria-label="Next screenshot" className="absolute top-1/2 right-3 z-10 inline-flex size-9 pointer-coarse:size-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-border bg-background/80 backdrop-blur transition-colors hover:text-primary">
               <ChevronRight className="size-4" />
             </button>
           </>

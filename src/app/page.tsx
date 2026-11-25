@@ -1,6 +1,8 @@
+import { Hero } from "@/components/sections/hero";
 import { Intro } from "@/components/sections/intro";
-import { Services } from "@/components/sections/services";
+import { Process } from "@/components/sections/process";
 import { Work } from "@/components/sections/work";
+import { Proof } from "@/components/sections/proof";
 import { Experience } from "@/components/sections/experience";
 import { Skills } from "@/components/sections/skills";
 import { About } from "@/components/sections/about";
@@ -8,14 +10,16 @@ import { Contact } from "@/components/sections/contact";
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-[1180px]">
+    <>
+      <Hero />
       <Intro />
-      <Services />
+      <Process />
       <Work />
+      <Proof />
       <Experience />
       <Skills />
       <About />
       <Contact />
-    </div>
+    </>
   );
 }

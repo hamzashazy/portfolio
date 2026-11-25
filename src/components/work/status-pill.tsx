@@ -7,7 +7,7 @@ export function StatusPill({ status, note, className }: { status: Status; note?:
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full border border-border bg-background/70 px-2.5 py-1 font-mono text-[11px] leading-none whitespace-nowrap text-foreground/90 backdrop-blur",
+        "inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-2.5 py-1 font-mono text-[11px] leading-none whitespace-nowrap text-foreground/90",
         className,
       )}
     >

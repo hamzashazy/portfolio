@@ -1,13 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Geist, JetBrains_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Caveat, JetBrains_Mono, Michroma, Outfit } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Sidebar } from "@/components/shell/sidebar";
-import { MobileHeader } from "@/components/shell/mobile-header";
+import { TopBar } from "@/components/shell/top-bar";
+import { WelcomeGate } from "@/components/shell/welcome-gate";
+import { HireDock } from "@/components/shell/hire-dock";
+import { Footer } from "@/components/shell/footer";
 import { profile } from "@/data/profile";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-bricolage", display: "swap" });
-const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-body", display: "swap" });
+const michroma = Michroma({ subsets: ["latin"], weight: "400", variable: "--font-michroma", display: "swap", preload: false });
+const caveat = Caveat({ subsets: ["latin"], weight: "600", variable: "--font-caveat", display: "swap", preload: false });
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains", display: "swap" });
 
 export const metadata: Metadata = {
@@ -35,7 +39,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: dark)", color: "#1a1917" },
-    { media: "(prefers-color-scheme: light)", color: "#fbfaf8" },
+    { media: "(prefers-color-scheme: light)", color: "#0f2a20" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -43,16 +47,20 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${bricolage.variable} ${geist.variable} ${jetbrains.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${bricolage.variable} ${outfit.variable} ${jetbrains.variable} ${michroma.variable} ${caveat.variable}`}>
+      <head>
+        {/* Returning visitors skip the welcome gate before first paint. */}
+        <script dangerouslySetInnerHTML={{ __html: "try{if(localStorage.getItem('entered'))document.documentElement.dataset.entered='1'}catch(e){}" }} />
+      </head>
       <body className="min-h-dvh">
         <ThemeProvider>
-          <div className="lg:grid lg:grid-cols-[300px_minmax(0,1fr)] xl:grid-cols-[320px_minmax(0,1fr)]">
-            <Sidebar />
-            <MobileHeader />
-            <main id="main" className="min-w-0">
-              {children}
-            </main>
-          </div>
+          <WelcomeGate />
+          <TopBar />
+          <main id="main" className="min-w-0">
+            {children}
+          </main>
+          <Footer />
+          <HireDock />
         </ThemeProvider>
       </body>
     </html>

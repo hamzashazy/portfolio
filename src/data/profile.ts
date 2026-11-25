@@ -24,6 +24,7 @@ export const profile = {
 };
 
 export const nav = [
+  { id: "process", label: "Process" },
   { id: "work", label: "Work" },
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },

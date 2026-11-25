@@ -43,8 +43,16 @@
   --color-cat-automation: var(--cat-automation);
   --color-cat-ai: var(--cat-ai);
 
-  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-bricolage), var(--font-geist), ui-sans-serif, sans-serif;
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bricolage), var(--font-body), ui-sans-serif, sans-serif;
+  /* Wide numerals for stats, step numbers and the contact email. */
+  --font-numeric: var(--font-michroma), var(--font-jetbrains), ui-monospace, monospace;
+  /* Handwritten side notes; use sparingly. */
+  --font-hand: var(--font-caveat), cursive;
+
+  --color-bar: var(--bar);
+  --color-bar-foreground: var(--bar-foreground);
+  --color-gold: var(--gold);
   --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular", monospace;
   --font-heading: var(--font-display);
 
@@ -58,6 +66,16 @@
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --animate-pulse-dot: pulse-dot 2.4s var(--ease-out-expo) infinite;
+  --animate-rise: rise 0.7s var(--ease-out-expo) both;
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes scroll-progress {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
 
   @keyframes pulse-dot {
     0% { box-shadow: 0 0 0 0 color-mix(in oklch, currentColor 55%, transparent); }
@@ -68,30 +86,34 @@
 
 /* Light theme: warm paper, deep ink, emerald primary. */
 :root {
-  --background: oklch(0.985 0.004 85);
-  --foreground: oklch(0.2 0.012 70);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.2 0.012 70);
+  --background: oklch(0.962 0.011 98);
+  --foreground: oklch(0.27 0.04 168);
+  --card: oklch(0.985 0.006 98);
+  --card-foreground: oklch(0.27 0.04 168);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.2 0.012 70);
-  --primary: oklch(0.52 0.14 162);
+  --popover-foreground: oklch(0.27 0.04 168);
+  --primary: oklch(0.37 0.075 165);
   --primary-foreground: oklch(0.99 0.01 160);
-  --secondary: oklch(0.95 0.006 85);
+  --secondary: oklch(0.935 0.012 98);
   --secondary-foreground: oklch(0.25 0.012 70);
-  --muted: oklch(0.955 0.006 85);
-  --muted-foreground: oklch(0.47 0.012 70);
+  --muted: oklch(0.94 0.012 98);
+  --muted-foreground: oklch(0.5 0.03 168);
   --accent: oklch(0.94 0.02 162);
   --accent-foreground: oklch(0.3 0.06 162);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.9 0.008 85);
-  --input: oklch(0.9 0.008 85);
-  --ring: oklch(0.52 0.14 162);
+  --border: oklch(0.87 0.014 120);
+  --input: oklch(0.87 0.014 120);
+  --ring: oklch(0.37 0.075 165);
   --chart-1: oklch(0.52 0.14 162);
   --chart-2: oklch(0.7 0.15 75);
   --chart-3: oklch(0.6 0.16 300);
   --chart-4: oklch(0.62 0.13 230);
   --chart-5: oklch(0.47 0.012 70);
   --radius: 0.75rem;
+  /* Top bar and other deep-emerald surfaces, plus the gold accent for numerals. */
+  --bar: oklch(0.25 0.045 165);
+  --bar-foreground: oklch(0.96 0.012 95);
+  --gold: oklch(0.63 0.115 75);
   --sidebar: oklch(0.975 0.005 85);
   --sidebar-foreground: oklch(0.2 0.012 70);
   --sidebar-primary: oklch(0.52 0.14 162);
@@ -109,6 +131,9 @@
 
 /* Dark theme: warm near-black, soft ink, brighter emerald. */
 .dark {
+  --bar: oklch(0.2 0.035 165);
+  --bar-foreground: oklch(0.96 0.012 95);
+  --gold: oklch(0.82 0.12 82);
   --background: oklch(0.16 0.006 70);
   --foreground: oklch(0.955 0.006 85);
   --card: oklch(0.2 0.007 70);
@@ -154,7 +179,9 @@
   html {
     @apply font-sans antialiased;
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 6.5rem;
+    /* Keeps keyboard focus clear of the floating hire dock. */
+    scroll-padding-bottom: 5.5rem;
   }
   body {
     @apply bg-background text-foreground;
@@ -194,4 +221,53 @@
 @utility scrollbar-none {
   scrollbar-width: none;
   &::-webkit-scrollbar { display: none; }
+}
+
+/* Page gutter shared by the top bar and every section. */
+@utility shell {
+  @apply mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-10;
+}
+
+@utility gold-text {
+  background: linear-gradient(100deg, var(--gold), color-mix(in oklch, var(--gold) 55%, white) 45%, var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility chip {
+  @apply inline-flex items-center rounded-md border border-border bg-card px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-foreground/85;
+}
+
+/* Numbered card with a ruled top edge: process steps, experience, skills. */
+@utility step-card {
+  @apply border-t-2 border-primary/70 pt-4;
+}
+
+@utility btn-solid {
+  @apply inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-medium text-primary-foreground transition-transform duration-200 hover:-translate-y-0.5 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none active:translate-y-0;
+}
+
+@utility btn-outline {
+  @apply inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded-full border border-foreground/60 px-6 text-sm font-medium transition-[transform,background-color] duration-200 hover:-translate-y-0.5 hover:bg-foreground/5 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none active:translate-y-0;
+}
+
+/* Welcome gate: an inline script in <head> sets data-entered for returning visitors, so the gate never flashes. */
+html[data-entered] #welcome-gate { display: none; }
+
+/* Deep-emerald section band. Re-points the colour tokens so every token-based class inside reads correctly on the dark surface, in both themes. */
+@utility band {
+  background: var(--bar);
+  color: var(--bar-foreground);
+  --foreground: var(--bar-foreground);
+  --card: color-mix(in oklch, var(--bar-foreground) 6%, var(--bar));
+  --card-foreground: var(--bar-foreground);
+  --muted: color-mix(in oklch, var(--bar-foreground) 9%, var(--bar));
+  --muted-foreground: color-mix(in oklch, var(--bar-foreground) 70%, var(--bar));
+  --border: color-mix(in oklch, var(--bar-foreground) 16%, var(--bar));
+  --input: color-mix(in oklch, var(--bar-foreground) 22%, var(--bar));
+  --primary: var(--bar-foreground);
+  --primary-foreground: var(--bar);
+  --ring: var(--gold);
+  --gold: oklch(0.82 0.12 82);
 }

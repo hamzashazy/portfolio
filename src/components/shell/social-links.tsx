@@ -24,6 +24,7 @@ export function SocialLinks({ className, size = "md" }: { className?: string; si
             className={cn(
               "inline-flex cursor-pointer items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none",
               size === "sm" ? "size-8" : "size-9",
+              "pointer-coarse:size-11",
             )}
           >
             <Icon className={size === "sm" ? "size-3.5" : "size-4"} />
